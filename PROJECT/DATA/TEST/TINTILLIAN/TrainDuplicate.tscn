@@ -1,0 +1,1161 @@
+[gd_scene load_steps=67 format=3 uid="uid://cvppfr3y6bdjq"]
+
+[ext_resource type="Script" uid="uid://dyo16x0gf56co" path="res://DATA/LEVEL/player_home_system.gd" id="1_epd6w"]
+[ext_resource type="PackedScene" uid="uid://cafy4rv1720h1" path="res://DATA/SYSTEM/room_area.tscn" id="2_67nkx"]
+[ext_resource type="PackedScene" uid="uid://c3ymo10nyo6sb" path="res://DATA/LEVEL/OBJECT/heat_pipe_2.tscn" id="3_nv3v7"]
+[ext_resource type="PackedScene" uid="uid://dj25teat50hnx" path="res://DATA/LEVEL/OBJECT/door_shuttle_2x_3.tscn" id="4_tlrau"]
+[ext_resource type="Script" uid="uid://dvr2ybcsbgv8r" path="res://SYSTEM/room_system.gd" id="5_gwtse"]
+[ext_resource type="PackedScene" uid="uid://q0pff00r7tjr" path="res://DATA/LEVEL/OBJECT/ventilator.tscn" id="6_ffols"]
+[ext_resource type="Texture2D" uid="uid://clb2iqaytba0v" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_04_diff_1k.jpg" id="7_lx8kk"]
+[ext_resource type="Texture2D" uid="uid://dc2xpnputh7cb" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_04_ao_1k.jpg" id="8_j2wwt"]
+[ext_resource type="Texture2D" uid="uid://b2ex7wukvuc60" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_04_arm_1k.jpg" id="9_i5b3r"]
+[ext_resource type="Texture2D" uid="uid://bicl081wusrky" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/metal_plate/metal_plate_02_diff_1k.jpg" id="10_ig6uk"]
+[ext_resource type="Texture2D" uid="uid://gl7niquqdgti" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/metal_plate/metal_plate_02_ao_1k.jpg" id="11_kg72w"]
+[ext_resource type="Texture2D" uid="uid://cpkio0sgvgfgo" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/metal_plate/metal_plate_02_disp_1k.png" id="12_xf46u"]
+[ext_resource type="Texture2D" uid="uid://bi6fartdg2hcv" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/Grating.jpg" id="13_1oqli"]
+[ext_resource type="Texture2D" uid="uid://d1a66a0bteiul" path="res://ASSETS/TEXTURE/SURFACE/CONCRETE/large_floor_tiles_02_diff_1k.jpg" id="14_qj5ua"]
+[ext_resource type="Texture2D" uid="uid://dncia61kt3cbv" path="res://ASSETS/TEXTURE/SURFACE/CONCRETE/large_floor_tiles_02_disp_1k.png" id="15_kq07k"]
+[ext_resource type="Texture2D" uid="uid://o67bd1aj0nrx" path="res://ASSETS/TEXTURE/SURFACE/CONCRETE/large_floor_tiles_02_arm_1k.jpg" id="16_x8bfn"]
+[ext_resource type="Texture2D" uid="uid://cpbubtd0t6r6r" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_04_disp_1k.png" id="17_plr5c"]
+[ext_resource type="PackedScene" uid="uid://d14piuse0k682" path="res://DATA/LEVEL/DEBUG/teststopbutton.tscn" id="18_axr7m"]
+[ext_resource type="Texture2D" uid="uid://b6r4thqnqtpgf" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_grid_diff_1k.jpg" id="19_4dxpg"]
+[ext_resource type="Texture2D" uid="uid://dapst5q2giqdl" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_grid_ao_1k.jpg" id="20_qx67g"]
+[ext_resource type="Texture2D" uid="uid://74r6pt1qtgnq" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_grid_disp_1k.png" id="21_4f03l"]
+[ext_resource type="PackedScene" uid="uid://x4c8qo4gfhu" path="res://DATA/LEVEL/CHARACTERS/player.tscn" id="22_gbu8b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bv0i1"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7uo4q"]
+albedo_color = Color(1.2935139e-07, 0, 0.1570226, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7used"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbg0s"]
+transparency = 1
+albedo_color = Color(0.3242198, 0.8814187, 0.9733617, 0.30980393)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti486"]
+albedo_color = Color(0, 0.7254902, 0.5176471, 0.47843137)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i7mtg"]
+resource_local_to_scene = true
+size = Vector3(14, 14, 30)
+
+[sub_resource type="FogMaterial" id="FogMaterial_kk70s"]
+resource_local_to_scene = true
+density = 0.0
+edge_fade = 0.2928172
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idnc3"]
+albedo_texture = ExtResource("7_lx8kk")
+metallic = 0.66
+metallic_specular = 0.68
+metallic_texture = ExtResource("8_j2wwt")
+metallic_texture_channel = 4
+roughness = 0.3
+normal_enabled = true
+normal_scale = -0.8
+normal_texture = ExtResource("9_i5b3r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3yml"]
+next_pass = SubResource("StandardMaterial3D_idnc3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8y54r"]
+albedo_texture = ExtResource("10_ig6uk")
+metallic = 1.0
+metallic_texture = ExtResource("11_kg72w")
+metallic_texture_channel = 4
+roughness = 0.78
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("11_kg72w")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 0.087
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_flip_tangent = true
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("12_xf46u")
+heightmap_flip_texture = true
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oy48t"]
+albedo_texture = ExtResource("7_lx8kk")
+
+[sub_resource type="Gradient" id="Gradient_oy48t"]
+offsets = PackedFloat32Array(0.24615385, 0.37692308)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cb05v"]
+noise_type = 3
+frequency = 0.2365
+offset = Vector3(0, 62.35, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5luft"]
+noise = SubResource("FastNoiseLite_cb05v")
+color_ramp = SubResource("Gradient_oy48t")
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_idnc3"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_oy48t"]
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cb05v"]
+width = 372
+height = 142
+noise = SubResource("FastNoiseLite_oy48t")
+color_ramp = SubResource("Gradient_idnc3")
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_cb05v"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5luft"]
+gradient = SubResource("Gradient_cb05v")
+width = 779
+height = 679
+fill_to = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3hop"]
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.1254902, 0, 0.69411767, 0)
+metallic = 1.0
+metallic_specular = 1.0
+metallic_texture_channel = 3
+roughness = 0.42
+roughness_texture = SubResource("GradientTexture2D_5luft")
+roughness_texture_channel = 4
+normal_scale = 3.09
+normal_texture = SubResource("NoiseTexture2D_cb05v")
+heightmap_scale = 0.72
+heightmap_texture = SubResource("NoiseTexture2D_5luft")
+refraction_enabled = true
+refraction_scale = 0.01
+refraction_texture_channel = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0q78"]
+albedo_texture = ExtResource("13_1oqli")
+uv1_scale = Vector3(1, 25.075, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_guc7a"]
+albedo_texture = ExtResource("14_qj5ua")
+normal_enabled = true
+normal_scale = 0.85
+normal_texture = ExtResource("16_x8bfn")
+ao_enabled = true
+ao_light_affect = 0.88
+ao_texture = ExtResource("15_kq07k")
+heightmap_enabled = true
+heightmap_scale = 4.701
+heightmap_flip_tangent = true
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("15_kq07k")
+uv1_scale = Vector3(4.854, 2.06, 4.854)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bldxx"]
+albedo_texture = ExtResource("7_lx8kk")
+metallic_specular = 0.14
+metallic_texture = ExtResource("17_plr5c")
+normal_enabled = true
+normal_scale = 1.25
+normal_texture = ExtResource("9_i5b3r")
+
+[sub_resource type="Gradient" id="Gradient_guc7a"]
+offsets = PackedFloat32Array(0, 0.0076923077, 0.20769231, 0.77692306, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0.5077563, 0.73170143, 1, 1, 0, 0, 0, 0.72, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7fhyd"]
+noise_type = 4
+frequency = 0.0056
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bldxx"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_7fhyd")
+color_ramp = SubResource("Gradient_guc7a")
+
+[sub_resource type="Gradient" id="Gradient_j0q78"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_guc7a"]
+frequency = 0.0001
+fractal_type = 3
+fractal_lacunarity = 5.695
+fractal_gain = 0.825
+domain_warp_enabled = true
+domain_warp_type = 2
+domain_warp_amplitude = -15.115
+domain_warp_frequency = 0.295
+domain_warp_fractal_type = 2
+domain_warp_fractal_octaves = 10
+domain_warp_fractal_lacunarity = 1.535
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7fhyd"]
+width = 307
+height = 462
+noise = SubResource("FastNoiseLite_guc7a")
+color_ramp = SubResource("Gradient_j0q78")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fhyd"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.06666667, 0.34509805, 0.5803922, 0)
+metallic = 0.2
+metallic_specular = 1.0
+roughness = 0.65
+roughness_texture = SubResource("NoiseTexture2D_7fhyd")
+roughness_texture_channel = 1
+emission = Color(0.55566335, 0.8014585, 0.9951443, 1)
+emission_energy_multiplier = 0.02
+emission_texture = ExtResource("7_lx8kk")
+normal_enabled = true
+normal_scale = 0.75
+normal_texture = ExtResource("9_i5b3r")
+refraction_enabled = true
+refraction_scale = 0.1
+refraction_texture = SubResource("NoiseTexture2D_bldxx")
+
+[sub_resource type="Animation" id="Animation_s46c4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:spot_range")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [235.155]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:spot_attenuation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.45]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:spot_angle")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [28.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:spot_angle_attenuation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_bldxx"]
+resource_name = "new_animation"
+length = 120.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:spot_range")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [235.155, 235.155]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:spot_attenuation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 51.709198, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.45, -0.05000000000000071, 0.45]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:spot_angle")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 49.862442, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [28.0, 18.85, 28.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:spot_angle_attenuation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 16.620813, 62.78974, 79.41055, 120),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 5.0982413, 0.045752637, 1.4964737, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fk0c4"]
+_data = {
+&"RESET": SubResource("Animation_s46c4"),
+&"new_animation": SubResource("Animation_bldxx")
+}
+
+[sub_resource type="Animation" id="Animation_fk0c4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(138.03, 4, -7)]
+}
+
+[sub_resource type="Animation" id="Animation_j0q78"]
+resource_name = "new_animation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.499254, 4.516271, 5.2566433, 5.682358, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 0.9595023, 1),
+"update": 0,
+"values": [Vector3(138.03, -19.5, -7), Vector3(148.015, -16.44, -251.275), Vector3(147.73, -16.84, -689.645), Vector3(147.73, -182.16, -689.645), Vector3(149.95, -182.16, 202.495), Vector3(138.03, 4, -7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i7mtg"]
+_data = {
+&"RESET": SubResource("Animation_fk0c4"),
+&"new_animation": SubResource("Animation_j0q78")
+}
+
+[sub_resource type="Animation" id="Animation_yhvir"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCylinder3D:material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d3hop"]
+resource_name = "Travel"
+length = 600.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCylinder3D:material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 600),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -500, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j0q78"]
+_data = {
+&"RESET": SubResource("Animation_yhvir"),
+&"Travel": SubResource("Animation_d3hop")
+}
+
+[sub_resource type="Animation" id="Animation_guc7a"]
+resource_name = "IDLE"
+length = 1200.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HULL_PIVOT/HullMotion:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 188.36923, 398.89954, 485.6971, 607.58307, 701.7677, 853.2018, 997.24884, 1200),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.04363323, -0.061086524, 0.05235988), Vector3(0.04363323, -0.061086524, 0.05235988), Vector3(-0.02617994, -0.061086524, 0.05235988), Vector3(-0.02617994, 0.017453292, -0.04363323), Vector3(-0.02617994, 0.017453292, -0.04363323), Vector3(-0.02617994, 0.14835298, 0.06981317), Vector3(-0.02617994, 0.14835298, 0.06981317), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL/LightPivot2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1200),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.7484555e-07, 0), Vector3(0, -3141.5928, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL/LightPivot3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1200),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -3.1415925, 0), Vector3(0, 2967.0598, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7fhyd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HULL_PIVOT/HullMotion:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL/LightPivot2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.7484555e-07, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL/LightPivot3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bldxx"]
+_data = {
+&"IDLE": SubResource("Animation_guc7a"),
+&"RESET": SubResource("Animation_7fhyd")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i7mtg"]
+albedo_color = Color(0.65359765, 0.7052782, 0.77522975, 1)
+albedo_texture = ExtResource("19_4dxpg")
+metallic = 1.0
+metallic_specular = 0.89
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("20_qx67g")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 1
+heightmap_max_layers = 64
+heightmap_flip_tangent = true
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("21_4f03l")
+heightmap_flip_texture = true
+uv1_scale = Vector3(1, 5.25, 1)
+
+[sub_resource type="Environment" id="Environment_d3hop"]
+ambient_light_source = 1
+reflected_light_source = 1
+ssr_fade_in = 0.6430642
+ssr_depth_tolerance = 10.21
+ssao_radius = 1.45
+ssao_intensity = 2.34
+ssao_power = 1.2183789
+ssao_detail = 2.5
+ssao_sharpness = 1.0
+ssao_light_affect = 0.59
+ssao_ao_channel_affect = 1.0
+ssil_intensity = 1.8
+ssil_sharpness = 0.0
+ssil_normal_rejection = 0.0
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 6.03
+glow_strength = 1.42
+glow_bloom = 0.34
+glow_blend_mode = 4
+glow_hdr_threshold = 4.0
+glow_hdr_scale = 2.33
+glow_hdr_luminance_cap = 120.1
+glow_map_strength = 0.0
+fog_light_color = Color(0.46975243, 0.46849048, 0.55615824, 1)
+fog_light_energy = 0.15
+fog_density = 0.006
+fog_height = 28.25
+fog_height_density = 0.008
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0025
+
+[node name="Player_Home" type="Node3D"]
+script = ExtResource("1_epd6w")
+
+[node name="HULL_PIVOT" type="Node3D" parent="."]
+
+[node name="HullMotion" type="Node3D" parent="HULL_PIVOT"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 44.17, 0)
+
+[node name="RA_EngineRoom" parent="HULL_PIVOT/HullMotion" instance=ExtResource("2_67nkx")]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 9, 1.3054943)
+priority = 2
+V3RoomDimensions = Vector3(14.57, 15.125, 32.36)
+fSmokeDensityMax = 0.5
+
+[node name="HeatPipe2" parent="HULL_PIVOT/HullMotion/RA_EngineRoom" instance=ExtResource("3_nv3v7")]
+transform = Transform3D(0.99999994, 0, 0, 0, -1, 8.742277e-08, 0, -8.7422784e-08, -1, -3.9647527, 5, 1)
+
+[node name="HeatPipe3" parent="HULL_PIVOT/HullMotion/RA_EngineRoom" instance=ExtResource("3_nv3v7")]
+transform = Transform3D(1, 0, 0, 0, -1.0000001, 8.742278e-08, 0, -8.7422784e-08, -1, 4.0000005, 5, -1)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, -9.462881)
+light_color = Color(0.72143394, 0.26109853, 0, 1)
+light_energy = 3.309
+omni_range = 241.213
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 6.4546432)
+light_color = Color(0.72143394, 0.26109853, 0, 1)
+light_energy = 3.309
+omni_range = 241.213
+
+[node name="Design" type="Node" parent="HULL_PIVOT/HullMotion/RA_EngineRoom"]
+
+[node name="Engine" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35479736, 48.29018, -0.100250244)
+size = Vector3(3.8743896, 4.2020264, 11.6206665)
+
+[node name="ExhaustManifold" type="CSGPolygon3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine"]
+transform = Transform3D(-0.8660254, 0.50000006, 0, -0.50000006, -0.8660254, 0, 0, 0, 1, 2.2565274, 1.7164078, 5.138542)
+polygon = PackedVector2Array(1.0967197, 1.1425781, 0.18963242, 1.1325684, -0.29272652, 0.88448715, 0.6600168, 0.40673828)
+depth = 10.23
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold"]
+transform = Transform3D(0.67235386, 0.74022985, 0, -0.74022985, 0.67235386, 0, 0, 0, 1, -0.5922756, -0.16427612, -4.161277)
+radius = 0.4633789
+height = 2.5756836
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold"]
+transform = Transform3D(0.67235386, 0.74022985, 0, -0.74022985, 0.67235386, 0, 0, 0, 1, -0.5922756, -0.16427612, -5.8917737)
+radius = 0.4633789
+height = 2.5756836
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold"]
+transform = Transform3D(0.67235386, 0.74022985, 0, -0.74022985, 0.67235386, 0, 0, 0, 1, -0.5922756, -0.16427612, -7.634003)
+radius = 0.4633789
+height = 2.5756836
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold"]
+transform = Transform3D(0.67235386, 0.74022985, 0, -0.74022985, 0.67235386, 0, 0, 0, 1, -0.5922756, -0.16427612, -9.365342)
+radius = 0.4633789
+height = 2.5756836
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold"]
+transform = Transform3D(0.71593136, 0.622289, -0.31654423, -0.6905769, 0.6978722, -0.18995082, 0.10270245, 0.3545893, 0.92936456, -3.6004581, -3.3974113, -5.433651)
+radius = 0.4633789
+height = 7.07251
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold"]
+transform = Transform3D(0.71593136, 0.62228906, -0.31654423, -0.6905769, 0.6978722, -0.18995082, 0.10270245, 0.3545893, 0.92936456, -3.6004581, -3.3974113, -7.098857)
+radius = 0.4633789
+height = 7.07251
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold"]
+transform = Transform3D(0.71593136, 0.62228906, -0.31654423, -0.6905769, 0.69787216, -0.18995082, 0.10270245, 0.3545893, 0.92936456, -3.6004581, -3.3974113, -8.868101)
+radius = 0.4633789
+height = 7.07251
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold"]
+transform = Transform3D(0.71593136, 0.6222891, -0.31654423, -0.6905769, 0.69787216, -0.18995082, 0.10270245, 0.3545893, 0.92936456, -3.6004581, -3.3974113, -10.595537)
+radius = 0.4633789
+height = 7.07251
+
+[node name="ExhaustManifold2" type="CSGPolygon3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine"]
+transform = Transform3D(0.8660254, -0.50000006, -8.742278e-08, -0.50000006, -0.8660254, 0, -7.5710346e-08, 4.3711392e-08, -1, -2.2437308, 1.7164078, -5.0600643)
+polygon = PackedVector2Array(1.0967197, 1.1425781, 0.18963242, 1.1325684, -0.29272652, 0.88448715, 0.6600168, 0.40673828)
+depth = 10.23
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold2"]
+transform = Transform3D(-0.6927352, 0.72119254, -7.5710346e-08, 0.72119254, 0.6927352, 4.3711392e-08, 8.397155e-08, -2.4321293e-08, -1, -0.56266594, -0.18136978, -5.862995)
+radius = 0.4633789
+height = 2.5756836
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold2"]
+transform = Transform3D(-0.6927352, 0.72119254, -7.5710346e-08, 0.72119254, 0.6927352, 4.3711392e-08, 8.397155e-08, -2.4321293e-08, -1, -0.56266594, -0.18136978, -0.80625963)
+radius = 0.4633789
+height = 2.5756836
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold2"]
+transform = Transform3D(-0.69273525, 0.72119266, -7.5710346e-08, 0.72119266, 0.69273525, 4.3711392e-08, 8.397155e-08, -2.432128e-08, -1, -0.56266594, -0.18136978, -2.4108813)
+radius = 0.4633789
+height = 2.5756836
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold2"]
+transform = Transform3D(-0.83266586, 0.54177165, -0.11469034, 0.5441704, 0.76207113, -0.3508954, -0.102702364, -0.35458934, -0.9293646, -3.2732964, -3.5863037, -1.13376)
+radius = 0.4633789
+height = 7.07251
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold2"]
+transform = Transform3D(-0.83266586, 0.5417717, -0.11469034, 0.5441704, 0.7620712, -0.35089543, -0.102702364, -0.35458934, -0.9293646, -3.2732964, -3.5863, 0.39996195)
+radius = 0.4633789
+height = 7.07251
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold2"]
+transform = Transform3D(-0.83266586, 0.54177177, -0.11469034, 0.5441704, 0.76207125, -0.35089546, -0.102702364, -0.35458934, -0.9293646, -3.2732964, -3.586296, -2.9532144)
+radius = 0.4633789
+height = 7.07251
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold2"]
+transform = Transform3D(-0.83266586, 0.54177177, -0.11469035, 0.5441704, 0.7620713, -0.3508955, -0.102702364, -0.35458934, -0.9293646, -3.2732964, -3.586296, -4.662782)
+radius = 0.4633789
+height = 7.07251
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/Engine/ExhaustManifold2"]
+transform = Transform3D(-0.69273525, 0.72119266, -7.5710346e-08, 0.72119266, 0.69273525, 4.3711392e-08, 8.397155e-08, -2.4321281e-08, -1, -0.56266594, -0.18136978, -4.168061)
+radius = 0.4633789
+height = 2.5756836
+
+[node name="FuelTank" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.609156, 47.333412, 8.554248)
+size = Vector3(0.9634857, 2.5443726, 6.840645)
+
+[node name="FuelPump" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/FuelTank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043264866, -0.8466263, -4.463937)
+size = Vector3(0.5678711, 0.56469727, 1)
+
+[node name="FuelCap" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/FuelTank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3004074, -2.876472)
+radius = 0.3310547
+height = 0.22753906
+material = SubResource("StandardMaterial3D_bv0i1")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/FuelTank"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.053267956, -0.76646423, -4.761525)
+radius = 0.15771484
+height = 2.6259766
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/FuelTank"]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 2.791157, -0.76646423, -6.0983973)
+radius = 0.15771484
+height = 5.6279297
+
+[node name="CoolantTank" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.895402, 49.98925, -13.367381)
+radius = 1.4160156
+height = 7.7612305
+material = SubResource("StandardMaterial3D_7uo4q")
+
+[node name="Valve" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/CoolantTank"]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 1.4518511, -2.9732475, -0.053373337)
+radius = 0.3310547
+height = 0.22753906
+material = SubResource("StandardMaterial3D_7used")
+
+[node name="WaterPump" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/CoolantTank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6704893, -3.5024643, 2.6489477)
+size = Vector3(0.5678711, 0.56469727, 1)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/CoolantTank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3426895, 0)
+light_color = Color(0, 0.6581065, 0.23134232, 1)
+light_energy = 1.99
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/CoolantTank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35321045, 0)
+radius = 1.4951172
+height = 4.6654053
+material = SubResource("StandardMaterial3D_mbg0s")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/CoolantTank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35321045, 0)
+operation = 2
+radius = 1.4697266
+height = 4.6654053
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/CoolantTank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5896301, 0)
+radius = 1.3759766
+height = 2.8668823
+material = SubResource("StandardMaterial3D_ti486")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/CoolantTank"]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 1.0774028, -3.4223022, 13.11509)
+radius = 0.15771484
+height = 5.6279297
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/CoolantTank"]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -1.1105852, -3.4223022, 0.05697155)
+radius = 0.15771484
+height = 1.2519531
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="HULL_PIVOT/HullMotion/RA_EngineRoom/Design/CoolantTank"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.6604862, -3.4223022, 6.565566)
+radius = 0.15771484
+height = 13.12085
+
+[node name="Door_Shuttle_2x3" parent="HULL_PIVOT/HullMotion" node_paths=PackedStringArray("Room_01", "Room_02") instance=ExtResource("4_tlrau")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 1, 4.051185, 1.8300018, -17)
+Room_01 = NodePath("../RA_EngineRoom")
+Room_02 = NodePath("../RA_ControlRoom")
+
+[node name="RA_ControlRoom" type="Area3D" parent="HULL_PIVOT/HullMotion"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 9, -34)
+script = ExtResource("5_gwtse")
+V3RoomDimensions = Vector3(14, 14, 30)
+fSmokeDensityMax = 0.5
+
+[node name="ROOM_ZONE" type="CollisionShape3D" parent="HULL_PIVOT/HullMotion/RA_ControlRoom"]
+shape = SubResource("BoxShape3D_i7mtg")
+
+[node name="FogVolume" type="FogVolume" parent="HULL_PIVOT/HullMotion/RA_ControlRoom"]
+size = Vector3(14, 14, 30)
+material = SubResource("FogMaterial_kk70s")
+
+[node name="VentilationTimer" type="Timer" parent="HULL_PIVOT/HullMotion/RA_ControlRoom"]
+one_shot = true
+autostart = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="HULL_PIVOT/HullMotion/RA_ControlRoom"]
+transform = Transform3D(-0.5568732, 0.51747453, -0.64970225, 0.6372656, 0.76786655, 0.06537648, 0.53271496, -0.37762624, -0.7573726, -11.000001, -0.56261444, -14.339848)
+light_color = Color(0.715355, 0.6912805, 0.99581236, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 1.93
+light_specular = 0.825
+shadow_enabled = true
+spot_range = 34.0
+
+[node name="Ventilator" parent="HULL_PIVOT/HullMotion/RA_ControlRoom" instance=ExtResource("6_ffols")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -1.5677035, -5.196617, -14.510323)
+
+[node name="Door_Shuttle_2x4" parent="HULL_PIVOT/HullMotion" node_paths=PackedStringArray("Room_01", "Room_02") instance=ExtResource("4_tlrau")]
+transform = Transform3D(0.99999934, 0, 0, 0, 0.99999934, 0, 0, 0, 1, 5.0213447, 1.8300018, -51)
+Room_01 = NodePath("../RA_ControlRoom")
+Room_02 = NodePath("../RA_Quarters")
+
+[node name="RA_Quarters" parent="HULL_PIVOT/HullMotion" instance=ExtResource("2_67nkx")]
+transform = Transform3D(0.99999946, 0, 0, 0, 0.99999946, 0, 0, 0, 1, 0, 9, -68.46033)
+V3RoomDimensions = Vector3(14, 14, 30)
+
+[node name="HULL" type="CSGCombiner3D" parent="HULL_PIVOT/HullMotion"]
+use_collision = true
+
+[node name="HULL" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+use_collision = true
+size = Vector3(15, 15, 35)
+material = SubResource("StandardMaterial3D_y3yml")
+
+[node name="HULL2" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -35.5)
+use_collision = true
+size = Vector3(15, 15, 36)
+material = SubResource("StandardMaterial3D_y3yml")
+
+[node name="HULL_INT" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+operation = 2
+use_collision = true
+size = Vector3(14, 14, 30)
+material = SubResource("StandardMaterial3D_8y54r")
+
+[node name="HULL3" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -69.96033)
+use_collision = true
+size = Vector3(15, 15, 36)
+material = SubResource("StandardMaterial3D_y3yml")
+
+[node name="HULL_INT3" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -68.46033)
+operation = 2
+use_collision = true
+size = Vector3(14, 14, 30)
+material = SubResource("StandardMaterial3D_8y54r")
+
+[node name="HULL_DoorWay" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 4.1628404, 3.5, -16.97859)
+operation = 2
+use_collision = true
+size = Vector3(2.05, 3, 6)
+material = SubResource("StandardMaterial3D_8y54r")
+
+[node name="HULL_DoorWay2" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(0.9999904, 0, 0, 0, 0.9999904, 0, 0, 0, 1, 4.950889, 3.4391518, -51.12697)
+operation = 2
+use_collision = true
+size = Vector3(2.05, 2.878, 4.824)
+material = SubResource("StandardMaterial3D_8y54r")
+
+[node name="HULL_INT2" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -34)
+operation = 2
+use_collision = true
+size = Vector3(14, 14, 30)
+material = SubResource("StandardMaterial3D_8y54r")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 13.5, 1)
+operation = 2
+size = Vector3(2, 2, 27)
+material = SubResource("StandardMaterial3D_oy48t")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(0.8182196, 0.5749058, 2.7901592e-10, -0.57490563, 0.8182194, -6.7520896e-09, 2.9104115e-09, -1.9208386e-09, 1, -7.7523804, 14.775201, 1.1263858)
+operation = 2
+size = Vector3(2, 0.5229492, 27)
+material = SubResource("StandardMaterial3D_oy48t")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(0.9995758, 0.026715606, 0.012039552, -0.026503354, 0.9994997, -0.01744959, -0.012499697, 0.017123012, 0.9997772, -7.1624146, 14.235124, 0.5473848)
+size = Vector3(0.7388916, 1.1906128, 27)
+material = SubResource("StandardMaterial3D_d3hop")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(0.99948555, -0.032056186, -1.4915713e-10, 0.0320562, 0.9994872, 2.328302e-10, 5.820766e-11, 2.3283069e-09, 1.0000008, 7.2495117, 12.757042, -0.03455786)
+size = Vector3(0.91760254, 5, 30.241943)
+material = SubResource("StandardMaterial3D_d3hop")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(0.99948555, -0.03205604, -1.4551915e-10, 0.032056198, 0.9994872, 1.36788e-09, 1.193257e-09, 1.9208528e-09, 1.0000008, -7.7948313, 6.88554, -32.599003)
+size = Vector3(2, 5, 29.854004)
+material = SubResource("StandardMaterial3D_d3hop")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(0.99948555, -0.032056186, -1.4915713e-10, 0.0320562, 0.9994872, 2.328302e-10, 5.820766e-11, 2.3283069e-09, 1.0000008, 7.40271, 9.936029, -33.73364)
+size = Vector3(1.8787842, 5, 29.78003)
+material = SubResource("StandardMaterial3D_d3hop")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3969727, 7.538783, -33.620884)
+size = Vector3(2.2060547, 0.56396484, 31.005646)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, -9.778887e-09, 0, -3.981404e-08, 0.9999985, 0, -2.9802322e-08, -7.4505806e-08, 1, -7.718992, 5.756798, -33.002293)
+size = Vector3(2.2060547, 3, 29.768448)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1.0000007, 3.981404e-08, -6.7055225e-08, -1.5366822e-08, 1.000001, -1.1175871e-08, -2.2351742e-08, 7.0780516e-08, 1.0000012, -7.723154, 11.183689, -33.002186)
+size = Vector3(2.2060547, 3, 29.768448)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3969727, 10.538783, -0.62088364)
+size = Vector3(2.2060547, 0.56396484, 31.005646)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3969727, 15.103957, -0.62088376)
+size = Vector3(2.2060547, 0.56396484, 31.005646)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3969727, 12.19211, -33.62088)
+size = Vector3(2.2060547, 0.56396484, 31.005646)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 1.7484555e-07, 1.7484555e-07, -1.7484555e-07, -4.371139e-08, 1, 1.7484555e-07, -1, -4.3711356e-08, 7.3969727, 9.907522, -48.696087)
+size = Vector3(2.2060547, 0.56396484, 5.550293)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 1.7484555e-07, 1.7484555e-07, -1.7484555e-07, -4.371139e-08, 1, 1.7484555e-07, -1, -4.3711356e-08, -7.695862, 8.682671, -47.614815)
+size = Vector3(2.2060547, 0.56396484, 8)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 1.7484555e-07, 1.7484555e-07, -1.7484555e-07, -4.371139e-08, 1, 1.7484555e-07, -1, -4.3711356e-08, -7.695862, 8.682671, -19.066467)
+size = Vector3(2.2060547, 0.56396484, 8)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 1.7484555e-07, 1.7484555e-07, -1.7484555e-07, -4.371139e-08, 1, 1.7484555e-07, -1, -4.3711356e-08, 7.3969727, 9.970877, -18.969856)
+size = Vector3(2.2060547, 0.56396484, 5.369873)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 1.7484555e-07, 1.7484555e-07, -1.7484555e-07, -4.371139e-08, 1, 1.7484555e-07, -1, -4.3711356e-08, 7.3969727, 12.671852, -14.749545)
+size = Vector3(2.2060547, 0.56396484, 5.369873)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 1.7484555e-07, 1.7484555e-07, -1.7484555e-07, -4.371139e-08, 1, 1.7484555e-07, -1, -4.3711356e-08, 7.3969727, 12.671852, 14.555022)
+size = Vector3(2.2060547, 0.56396484, 5.369873)
+material = SubResource("StandardMaterial3D_j0q78")
+
+[node name="FLOOR_01" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010375977, 2, 0.008636475)
+operation = 2
+size = Vector3(14.024658, 0.002, 29.9729)
+material = SubResource("StandardMaterial3D_guc7a")
+
+[node name="FLOOR_02" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2597046, 2, -34.0047)
+operation = 2
+size = Vector3(14.024658, 0.002, 29.9729)
+material = SubResource("StandardMaterial3D_guc7a")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.969944, 14)
+operation = 2
+radius = 5.335
+radial_segments = 14
+material = SubResource("StandardMaterial3D_bldxx")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.969944, 19.256083)
+size = Vector3(13, 9, 4)
+material = SubResource("StandardMaterial3D_7fhyd")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 6.876137, -83.74393)
+operation = 2
+radius = 5.335
+radial_segments = 14
+material = SubResource("StandardMaterial3D_bldxx")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 6.876137, -89.00001)
+size = Vector3(13, 9, 4)
+material = SubResource("StandardMaterial3D_7fhyd")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.536744e-07, 1.5, 1)
+size = Vector3(16, 1, 34)
+
+[node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 7.000004, 9.5, 1)
+size = Vector3(16, 1, 34)
+
+[node name="GPUParticlesCollisionBox3D3" type="GPUParticlesCollisionBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -7.9999976, 9.5, 1)
+size = Vector3(16, 1, 34)
+
+[node name="GPUParticlesCollisionBox3D4" type="GPUParticlesCollisionBox3D" parent="HULL_PIVOT/HullMotion/HULL"]
+transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 1.0000015, 15.5, 1)
+size = Vector3(16, 1, 34)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="HULL_PIVOT/HullMotion"]
+transform = Transform3D(0.9975312, 0.059930928, -0.036611084, 0.0681884, -0.95127624, 0.3007058, -0.016805682, -0.3024598, -0.95301396, 0.45871156, 0.31650925, 23.993528)
+light_color = Color(0.81850684, 0.87625295, 0.94598943, 1)
+light_energy = 4.795
+light_indirect_energy = 0.71
+light_volumetric_fog_energy = 6.2
+light_specular = 1.465
+spot_range = 235.155
+spot_attenuation = 0.45
+spot_angle = 28.0
+
+[node name="LampAnimation" type="AnimationPlayer" parent="HULL_PIVOT/HullMotion/SpotLight3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_fk0c4")
+}
+autoplay = "new_animation"
+
+[node name="ELECTRICITY" type="Node3D" parent="HULL_PIVOT/HullMotion"]
+
+[node name="LIGHTS_FRONT" type="Node3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY"]
+transform = Transform3D(1.0000001, -9.313226e-10, -7.450581e-09, -5.355105e-09, 1, -3.7252903e-09, 0, 0, 1, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/LIGHTS_FRONT"]
+transform = Transform3D(0.99999994, -2.8405339e-08, 1.4901161e-08, 2.0954758e-08, 0.99999994, 2.2351742e-08, 0, -1.8626451e-08, 0.99999994, 0.6995814, 9.240898, 12.344059)
+light_color = Color(0.61125106, 0.84834737, 1, 1)
+light_energy = 2.275
+light_specular = 0.425
+shadow_enabled = true
+omni_range = 14.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/LIGHTS_FRONT"]
+transform = Transform3D(0.99999994, -4.4470653e-08, 7.450581e-09, 3.585592e-08, 0.99999994, 3.7252903e-08, 0, -3.3527613e-08, 0.99999994, -0.28408122, 7.09457, -83.77784)
+light_color = Color(0.61125106, 0.84834737, 1, 1)
+light_energy = 2.275
+light_specular = 0.425
+shadow_enabled = true
+omni_range = 6.355
+
+[node name="LIGHTS_MIDDLE" type="Node3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY"]
+transform = Transform3D(0.9999997, -1.8859282e-08, 7.4505806e-08, -2.8405339e-08, 1, 2.7939677e-09, 1.4901161e-08, -1.5832484e-08, 1, 1.5477271, 6.802269, -34.04899)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/LIGHTS_MIDDLE"]
+transform = Transform3D(1.0000004, 4.7264646e-08, -8.940701e-08, 1.7347234e-15, 1, 1.3038513e-08, 7.1054274e-15, 0, 1, -3.0000005, 0, -7)
+light_color = Color(0.7897509, 0.99934727, 0.99999994, 1)
+light_energy = 4.55
+shadow_enabled = true
+omni_range = 14.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/LIGHTS_MIDDLE"]
+transform = Transform3D(1.0000002, 4.735807e-08, -8.987263e-08, -4.092726e-12, 1, 1.2805685e-08, 3.4924597e-10, 0, 1, -0.06921339, -0.053833008, -46.00522)
+light_color = Color(0.7897509, 0.99934727, 0.99999994, 1)
+light_energy = 4.55
+shadow_enabled = true
+omni_range = 44.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/LIGHTS_MIDDLE"]
+transform = Transform3D(1.0000004, 4.7264646e-08, -8.9407024e-08, 1.7347234e-15, 1, 1.3038513e-08, 1.7763568e-14, 0, 1, -6.000004, 0.47589874, 12.222137)
+light_color = Color(0.59031147, 0.7505557, 0.92123544, 1)
+light_energy = 7.185
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+omni_range = 14.0
+
+[node name="TUNNEL" type="Node3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY"]
+
+[node name="LightPivot" type="Node3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -131.04913, 14.993042, 217.34363)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL/LightPivot"]
+transform = Transform3D(1.0000001, -4.4237822e-09, 7.450581e-09, -1.3969839e-09, 1, 0, 0, 0, 1, 138.03, 4, -7)
+light_color = Color(0.5407858, 0.6663923, 0.90944886, 1)
+light_energy = 11.095
+light_specular = 6.125
+shadow_enabled = true
+omni_range = 79.48
+omni_attenuation = 0.925
+
+[node name="FrontLight" type="AnimationPlayer" parent="HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL/LightPivot"]
+libraries = {
+&"": SubResource("AnimationLibrary_i7mtg")
+}
+speed_scale = 1.25
+
+[node name="LightPivot2" type="Node3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL"]
+transform = Transform3D(0.99999994, 0, 1.7484554e-07, 0, 1, 0, -1.7484554e-07, 0, 0.99999994, 110, 8, -21)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL/LightPivot2"]
+transform = Transform3D(1, -1.7347227e-15, -7.105425e-15, 1.7347227e-15, 1, 3.3583538e-22, 7.105425e-15, -3.3583538e-22, 1, 90.95, 4, -7)
+light_color = Color(0.5407858, 0.6663923, 0.90944886, 1)
+light_energy = 12.695
+light_specular = 6.125
+shadow_enabled = true
+omni_range = 26.375
+omni_attenuation = 0.925
+
+[node name="LightPivot3" type="Node3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -152, 8, -21)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL/LightPivot3"]
+transform = Transform3D(1, -1.7347227e-15, -7.105425e-15, 1.7347227e-15, 1, 3.3583538e-22, 7.105425e-15, -3.3583538e-22, 1, 135.73, 4, -7)
+light_color = Color(0.43719074, 0.7285415, 0.88396424, 1)
+light_energy = 13.99
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 75.695
+omni_attenuation = 0.925
+
+[node name="SpotLight3D" type="SpotLight3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL"]
+transform = Transform3D(-0.86618894, 0.002957173, 0.49970806, -0.12763517, 0.96550536, -0.22695518, -0.48314196, -0.26036635, -0.8359326, -10.07148, 8.954597, -47.99358)
+light_energy = 0.35
+light_specular = 28.515
+spot_range = 152.98
+spot_angle = 23.57
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL"]
+transform = Transform3D(-0.05258539, -0.80730104, -0.5877924, -0.7783842, 0.4018678, -0.4823072, 0.6255819, 0.43216607, -0.6495227, 8.928464, 8.925709, -48.02726)
+light_energy = 0.35
+light_volumetric_fog_energy = 54.425
+light_specular = 28.515
+spot_range = 152.98
+spot_angle = 23.57
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="HULL_PIVOT/HullMotion/ELECTRICITY/TUNNEL"]
+transform = Transform3D(0.11395527, -0.9783633, 0.17268378, 0.9717408, 0.14593168, 0.1855371, -0.20672263, 0.14666098, 0.967345, 7.884199, 8.2055855, -92.01555)
+light_energy = 0.35
+light_volumetric_fog_energy = 54.425
+light_specular = 28.515
+spot_range = 613.0
+spot_angle = 23.57
+
+[node name="SYSTEM" type="Node3D" parent="HULL_PIVOT/HullMotion"]
+
+[node name="TESTSTOPBUTTON" parent="HULL_PIVOT/HullMotion" instance=ExtResource("18_axr7m")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, 3.1348662, 3.8300018, -16)
+
+[node name="TUNNEL2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../TUNNEL")
+libraries = {
+&"": SubResource("AnimationLibrary_j0q78")
+}
+autoplay = "Travel"
+speed_scale = 0.605
+
+[node name="HULL" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bldxx")
+}
+speed_scale = 0.29
+
+[node name="TUNNEL" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 0, 54, 37)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="TUNNEL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5258789e-05, 25.482853, 1.5916157e-12)
+flip_faces = true
+radius = 38.905
+height = 1853.4069
+material = SubResource("StandardMaterial3D_i7mtg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d3hop")
+
+[node name="Player" parent="." instance=ExtResource("22_gbu8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 46, -34)
+
+[connection signal="body_entered" from="HULL_PIVOT/HullMotion/RA_ControlRoom" to="HULL_PIVOT/HullMotion/RA_ControlRoom" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="HULL_PIVOT/HullMotion/RA_ControlRoom" to="HULL_PIVOT/HullMotion/RA_ControlRoom" method="_on_body_shape_entered"]
+[connection signal="timeout" from="HULL_PIVOT/HullMotion/RA_ControlRoom/VentilationTimer" to="HULL_PIVOT/HullMotion/RA_ControlRoom" method="_on_ventilation_timer_timeout"]

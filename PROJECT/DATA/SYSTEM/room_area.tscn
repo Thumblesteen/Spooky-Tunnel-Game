@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cafy4rv1720h1"]
+
+[ext_resource type="Script" uid="uid://dvr2ybcsbgv8r" path="res://SYSTEM/room_system.gd" id="1_4amie"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37dxh"]
+resource_local_to_scene = true
+size = Vector3(5, 5, 5)
+
+[sub_resource type="FogMaterial" id="FogMaterial_4amie"]
+resource_local_to_scene = true
+density = 0.0
+edge_fade = 0.2928172
+
+[node name="RoomArea" type="Area3D"]
+collision_layer = 3
+collision_priority = 1.5
+priority = 1
+script = ExtResource("1_4amie")
+fVentilationValue = 0.0
+
+[node name="ROOM_ZONE" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_37dxh")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+size = Vector3(5, 5, 5)
+material = SubResource("FogMaterial_4amie")
+
+[node name="VentilationTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="ParticleCollision" type="GPUParticlesCollisionBox3D" parent="."]
+size = Vector3(5, 5, 5)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="timeout" from="VentilationTimer" to="." method="_on_ventilation_timer_timeout"]

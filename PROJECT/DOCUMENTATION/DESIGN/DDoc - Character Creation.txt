@@ -1,0 +1,32 @@
+So I had an awesome idea for character creation. Your class selection is based
+on the crime you committed. Have some good ideas so far: 
+	
+	Serial Killer: 
+		Serial killers are good at using power tools, and gain bonuses to that.
+	
+	Contract Killer: 
+		Contract killers are good at bypassing security and locks. 
+	
+	Spree Killer: 
+		Spree Killers gain a bonus to movement and mobility. 
+	
+	Death Cultist: 
+		Death Cultists are good at manual labour and gain bonuses to maintenance
+		tasks.
+	
+	Terrorist:
+		Terrorists have bonuses to using technology. 
+
+Now the reason why the player can be despicable criminals like these in the game
+is because of its setting, you're not actually around any living human beings
+to inflict harm upon. The despicable elements of these things disappear from the
+story, and instead it creates a creepy sense of futility as the player has to
+keep this character alive throughout the story. Plus, it is kind of hilarious to
+go to your save files and see "Character Name, Level 5 Serial Killer" 
+
+On top of this, one part of the punishment is a chemically induced amnesia. This
+is said to be for rehabilitative purposes, to remove the bad personality. But 
+there are conspiracies on WorkNet suggesting that the amnesia is just a smoke
+screen for a new type of slavery that relies on guilt and isolation. 
+
+I like it because it's edgy without being gross or crossing the line. 

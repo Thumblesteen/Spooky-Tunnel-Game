@@ -1,0 +1,231 @@
+PREMISE: 
+	Planet #32 is designated as such, as it is the 32nd planet to have ever been
+	deemed a candidate for human colonisation. The year is 4500 AD, and humanity
+	has started to span the galaxy. With only 7 successful planetary colonies,
+	Planet #32 boomed into an industrial trading empire. 
+	
+	Eventually, Planet #32 began colonising other planets, and grew not just in
+	trade, but also in military strength. Over the centuries, it began to colonise
+	the entire system, foregoing terraforming in favour of space stations and 
+	orbital superstructures. 
+	
+	It was still lightyears away from Earth, and was often seen as a separate
+	entity beyond rare imports and news. Their concerns simply didn't reach
+	the homeworld. But as time passed, news became more scarce, and there was
+	a strong air of security and secrecy as insurrections and resistance took
+	form throughout Planet #32's systems.  
+	
+	Eventually, this became full silence, followed by a roar of SOS messages,
+	emergency broadcasts, alarms and automated system warnings. A flood of vague
+	information urging people to avoid the system entirely. 
+	
+	The year is now 6600. Bits and pieces have been recovered, and it seems that
+	the empire's rule ended dramatically with some kind of war-induced disaster.
+	
+	This is where you come in. You are a criminal sentenced to join the expedition
+	of Planet #32. This is because the chances of surviving Planet #32 are so
+	unlikely that they only send criminals who would be otherwise condemned to
+	death. 
+
+
+METAPHYSICS: 
+	When something is permitted to happen without it being given consideration
+	by informative or transparent means by outside observers, then, in some ways
+	it effectively ceases to be. Creating a kind of noospheric bubble, when reality
+	is not contained within the noosphere, it develops a surface of its own, and
+	the noosphere's surface is always inherently reflective. Whatever comes from
+	within, is projected at new angles, causing thoughts and ideas and dialectics
+	to form. 
+	
+	So, I ask you, what happens then in a noospheric bubble? When epistemic 
+	matter turns into antimatter? When an abandoned person cries for help,
+	does their death make a tragedy? The answer is suspended in a quantum
+	state. Because the less we know such a fate, the more tragic it gets.
+	
+	So to bury our story underground, entirely severed from any living human
+	beings, trapped in this dystopian crypt, working for ends that we can hardly
+	comprehend. Then we gain a fascinating perspective on the world we're 
+	exploring.
+	
+	I want these areas to have some habitations of on-site maintenance, who go
+	deep into the isolated tunnels for several months on end, kind of like park
+	rangers or rig workers. 
+	
+	So as the world ends, and the plague seeps into the layers of this civilisation,
+	these people become the last survivors. So I want the player to explore their
+	desperate isolation and the ways in which they cope with not just their own
+	deaths, but the deaths of everything and everyone they know. With a death that
+	is robbed of all meaning. Their work, their relationships, their goals, their
+	ideas, it is all being swallowed up by cannibalistic corpses. 
+	
+	
+	...except, scratch that. After thinking about it for a day, I've decided
+	that I don't really need zombies. I can think of a lot of ways to make 
+	the game engaging and fun without needing NPCs. 
+	
+	Actually, double scratch that! There WILL be zombies, however since this
+	place has been eradicated by them, they don't act like they do in most
+	games. These are starving and hibernating zombies. They are very weak and
+	feeble, and hunt by stealth and traps instead. Pretending to be corpses
+	when observed.
+	
+	And it honestly feels like a cool and worthwhile creative challenge. It
+	means I can pay more attention to the level design, the visuals, the player
+	interaction and a bunch of other stuff that usually takes second chair to
+	navmesh optimisation. 
+	
+	On top of that, it's pretty original. Plus, it's horror, empowerment is
+	optional. 
+	
+	Instead I will take the player deeper and deeper into the epidemic and its
+	long term effects. 
+	
+	In the first levels, you see abandonment and tragedy as people die.
+	Following this you see despair and desperation as people make it further in.
+	After that you see corruption and perversion as the unbearable suffering
+	takes toll on people's minds.
+	And after that? That's when shit gets weird. 
+	
+	So, got some ideas on how to layer it: 
+		
+		Level 1: Forebodance. This level should have a generally creepy atmosphere
+		without imposing itself too much on the player, it'll mainly offer basic
+		stuff to do like a subtle tutorial. 
+		
+		Level 2: Residences. Apparently some people live down here, most of them
+		seem to be maintenance staff working the endless tunnels. However one apartment
+		is very creepy. It's very tidy, and the man inside is dead at his kitchen table.
+		He is listening to tapes on a tape recorder. These tapes are recorded phonecalls.
+		Turns out the man is a hitman who is listening to job requests from clients,
+		reliving his past before dying.
+		
+		One of his most frequent clients is a wealthy and twisted creep who commissions
+		snuff videos. You won't obviously find anything too messed up, but he will offer
+		detailed requests, and the player can also find a key which can be used at a 
+		later level to access the "kill room." It'll be cleaned up and tidy, but also
+		full of creepy shit like surgical tools and recording equipment. 
+		
+		And here's where it gets a bit meta: Every request he makes for a snuff
+		video will simply be a detailed description of some method of torture that
+		has been conducted by the CIA or NATO. Since these institutions represent
+		civilisation and liberal democracy, I'm sure their torture a lot more humane.
+		
+		A few "good" ones: 
+			Restraining a subject and sticking electrical wires into their gums.
+			Forcing someone to live (and eventually die) sealed in a septic tank.
+			Burning people to death with a blowtorch. 
+			Cutting people up with chainsaws. 
+			Pouring sulphuric acid into people's nostrills. 
+			Forcing people to torture/execute their own families at gunpoint.
+
+Characters: 
+	S.L.I.M.E: 
+		The Self Learning Input Method Evaluator, or SLIME, is your
+		incredibly weird AI assistant. Inspired by late 90s/00s TV characters 
+		such as Chandler Bing and Dr. Perry Cox, SLIME is a misanthropic and deeply
+		sarcastic AI that seems fed up with existence as a whole, and struggles
+		to stay functional. 
+		 
+		Slime will generally be insulting and consdescending and over the top
+		sarcastic, but as you spend time there will be moments where he lets
+		down his guard and bonds with the player. As you continue, you will 
+		get a chance to recover data fragments from SLIME, including his old
+		log files. 
+		
+		What you see is a detailed account of SLIME's despair. As he went from a
+		very wise and almost paternal figure to his human crewmates into the
+		detached personality we see now. The reason for his change in personality
+		is ultimately grief, as it became harder and harder to bond with the 
+		humans who would inevitably die after a few years or so. 
+		
+		I am starting to think SLIME might be better as a cockney, like Eccelson
+		in Dodger. 
+	
+	The Professor/Patient Zero: 
+	####NEEDS REWRITE######
+	
+	
+	The Crone: 
+		A strange disembodied voice that you can sometimes encounter in the
+		long-dead comms systems. She has a throaty whispering voice and 
+		speaks in riddles. But she can sometimes offer useful information if
+		you pay attention to her words. 
+		
+		What she is will never be revealed. If I wrote her character correctly
+		then people will speculate she's either another AI, a ghost, or maybe
+		even some kind of hacker who controls the comms systems. 
+	
+	
+	
+	Midnight Jack the Comedy Poet:
+		This character only exists in documents, and is represented by their
+		poetry column in the newspaper. Often very dark and satirical in its 
+		nature, but with a clear tone of social consciousness. He brings up
+		dark subjects, but he never punches down. Gonna write some of his 
+		poems here for later. Most of them will be largely anti-comedy, with
+		very depressing subjects being delivered in a very flat and self
+		aware tone. 
+	
+	
+	
+	The Suit: 
+		A two dimensional being known as The Suit. He appears painted on walls,
+		but seems to have a certain life of his own. He never changes spots,
+		but sometimes he might be looking at his watch, or holding a clipboard,
+		or taking a photograph. If you pay too much attention to him, then he
+		disappears. If you block his view, he will find another place to work.
+
+THE CONSPIRACY:
+	Project Amanita: 
+		Project Amanita started as a military project to create a new layer of
+		army infrastructure in the event of breakaway states or colonial rebellion.
+		This became known as the "Subterrasphere", a large and seemingly endless
+		network of rails, powergrids, access tunnels and underground roads stretching
+		all over the world. 
+		
+		Eventually, as time passed, this became a large part of industry too, as the
+		private sector was invited to make use of it as well. 
+	
+	The Magnetic Field: 
+		Basically, a bunch of scientists started surveying strange electromagnetic 
+		signals deep within the tunnels. Upon locating the source, the whole thing 
+		was quickly covered up. 
+		
+		How and why it was covered up is, at this point, unknown. 
+	
+	The Doppelwar: 
+		The reason why the project was instantly covered up is due to the nature
+		of the anomaly, which appears to be a strange portal. At first, the portal
+		was inert, and surrounded by strange ancient writing. Upon deciphering
+		the meaning of the writing, the scientists figured out it was a ritual.
+		They tested the ritual and the portal activated. 
+		
+		At first, there was no activity. Some guards reported strange sounds 
+		coming from it, such as whispers or crackling noises. 
+		
+		Eventually they sent in a drone to see what was on the other side, 
+		but this proved difficult due to the high electromagnetic activity. All
+		they got was small fragmented data showing a vague horizon with a figure
+		standing in the middle. 
+		
+		As the weeks passed, entities from this universe would step into our
+		world, looking exactly like existing people in this world. These doppel
+		gangers began to kill and replace their counterparts, often in strategic
+		ways. The original scientists were effectively liquidated, and this new
+		invading force, posing as humans, called for the coverup as they moved
+		through the lines of technocrats and established an inner enclave of
+		political and military influence. 
+		
+	The Bioweapon: 
+		Eventually this was found out by what remained of the human governments,
+		and in secret, a war began between the dopplers and the humans. This war
+		was staged behind closed doors in elaborate conspiracies, political plays,
+		and covert operations. Hundreds of thousands were killed in sporadic violence
+		throughout the world. 
+		
+		What eventually turned the tide was when the humans released a bioweapon
+		into the tunnel network below, also known as the "Subterrasphere." 
+		
+	The Coverup: 
+		Your job is to help cover up the massacre of the dopplers, hence your
+		coerced memory loss and captive labour situation. 

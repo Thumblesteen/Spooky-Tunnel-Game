@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://p3lubda3rwl8"]
+
+[ext_resource type="Script" uid="uid://b7iui6tkfacgk" path="res://DATA/SYSTEM/DEBUG/teleporter.gd" id="1_jweqo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywiv6"]
+size = Vector3(1.1333618, 2.3944702, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jweqo"]
+emission_enabled = true
+emission = Color(4.9093364e-06, 0.6371471, 0.8017573, 1)
+emission_energy_multiplier = 45.85
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_aw04u"]
+material = SubResource("StandardMaterial3D_jweqo")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xdoss"]
+top_radius = 0.25
+bottom_radius = 0.25
+height = 18.03
+
+[node name="Teleporter" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_jweqo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0340271, 17.943268, 0)
+shape = SubResource("BoxShape3D_ywiv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, 0)
+mesh = SubResource("CylinderMesh_aw04u")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+mesh = SubResource("CylinderMesh_xdoss")
+
+[node name="Destination" type="Marker3D" parent="."]

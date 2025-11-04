@@ -1,0 +1,98 @@
+OBJECTIVES:
+	
+	- Burn Corpses
+	- Burn biohazards
+	- Clear the floor
+
+HAZARDS:
+	
+	Heat pipes
+	Steam bursts
+	Electrical discharge
+	Slippery surfaces
+	Flammable gas
+	Unstable power cells that explode if you sprint near them
+	
+
+OBSTACLES:
+	Lock types: 
+		Different kinds of locks that require different approaches to break
+		depending on brand. One might need drilling and a sledgehammer, another
+		might need welding, etc.  
+
+DOWNTIME:
+	Eating:
+		There is a nozzle with a face mask that you need to put on once per
+		day, triggering a hilarious and gross sequence where liquidated food
+		is being piped down into your throat in a very unpleasant manner, 
+		followed by a procedurally generated caption about how it tastes. 
+		
+		Very much a mix of shock comedy and horror, I want the sound to be
+		really gross, like throat sounds and machinery as you just get gruel
+		piped right into your stomach in a matter of seconds.
+		
+		I also want the mask to cover the whole face, so you need to basically
+		bend down, and when it makes contact I want there to be the sound of a 
+		suction seal for added horror. 
+		
+		The device will have the following branding:
+			"FOREVER FOOD: Recipes passed down from generations."
+		
+		SLIME will also make funny comments when it happens like:
+			"There you go, that's quality."
+			"Go on, time for din-dins."
+			"Try and keep your nose closed."
+			"Just what a growing convict needs."
+			"There you go, happy dreams."
+			"Fun fact: These things are made with disabilities in mind."
+	
+	Sleeping:
+		Instead of all that boring human sleep, you have been equipped with your
+		very own NyctoQwik sleep machine! It stimulates brain waves to give you
+		the effect of a healthy night's sleep in mere minutes. 
+		
+		After enjoying their forever food, the player will step into the pod
+		only to be greeted with a dark and sealed environment. Then begins a
+		sequence of harsh static with creepy auditory hallucinations and 
+		flashing images of decaying environments. After this unsettling sequence
+		of events, the player wakes up standing in a random part of the carriage.
+		
+		Ideas for sounds:
+			Broken and repetitive melodies.
+			Water harp.
+			Ghostly voices.
+			Grinding metal.
+			Footsteps
+			Banging on walls
+			Crying
+			Church bells
+			Flies
+			Crows
+			Rattling chains
+	
+	WorkNet Archive:
+		You can also log on to your terminal and access the WorkNet, a kind of
+		long defunct archive of a chat service made for punitive workers such
+		as yourself. You will be given a handful of random posts each day that
+		you can look through, containing hints at what is happening, and learn
+		about the dark secrets of your employers. 
+		
+		A lot of them will be practical advice and everyday complaints, but
+		some will be very uncanny. A few ideas. 
+		
+		"Has anyone seen a strange man when they're in the NyctoQwik?"
+		"I think the NyctoQwik flashes creepy stuff by design to somehow keep
+		our moods in check."
+		"If this is a punishment, why do they make us forget what we did?"
+		"Sometimes I get flashbacks, and I really don't seem like a bad person."
+		"One time I saw another carriage pass me by, just for a moment."
+		"I don't think SLIME is an AI. I swear I can hear someone moving in the 
+		walls."
+		"My SLIME just changed from an Australian accent into a British one and
+		keeps gaslighting me about it!"
+		"Does anyone else feel weird foreign objects in their forever food? I
+		swear something scratches at my throat."
+		"I heard something knocking on the door last night! It went on for hours.
+		SLIME says it was nothing and that I'll feel better once I have dinner."
+		"I just found one of our own at the site I was cleaning. It looked violent.
+		How is that even possible?!" 

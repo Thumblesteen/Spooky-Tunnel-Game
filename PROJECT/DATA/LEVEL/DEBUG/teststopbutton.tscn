@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://d14piuse0k682"]
+
+[ext_resource type="Script" uid="uid://dwonorormyogl" path="res://DATA/LEVEL/DEBUG/teststopbutton.gd" id="1_a2e82"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sj2y"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 24.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_a2e82"]
+material = SubResource("StandardMaterial3D_5sj2y")
+size = Vector3(0.41, 0.25, 0.25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2d7e5"]
+data = PackedVector3Array(-0.205, 0.125, 0.125, 0.205, 0.125, 0.125, -0.205, -0.125, 0.125, 0.205, 0.125, 0.125, 0.205, -0.125, 0.125, -0.205, -0.125, 0.125, 0.205, 0.125, -0.125, -0.205, 0.125, -0.125, 0.205, -0.125, -0.125, -0.205, 0.125, -0.125, -0.205, -0.125, -0.125, 0.205, -0.125, -0.125, 0.205, 0.125, 0.125, 0.205, 0.125, -0.125, 0.205, -0.125, 0.125, 0.205, 0.125, -0.125, 0.205, -0.125, -0.125, 0.205, -0.125, 0.125, -0.205, 0.125, -0.125, -0.205, 0.125, 0.125, -0.205, -0.125, -0.125, -0.205, 0.125, 0.125, -0.205, -0.125, 0.125, -0.205, -0.125, -0.125, 0.205, 0.125, 0.125, -0.205, 0.125, 0.125, 0.205, 0.125, -0.125, -0.205, 0.125, 0.125, -0.205, 0.125, -0.125, 0.205, 0.125, -0.125, -0.205, -0.125, 0.125, 0.205, -0.125, 0.125, -0.205, -0.125, -0.125, 0.205, -0.125, 0.125, 0.205, -0.125, -0.125, -0.205, -0.125, -0.125)
+
+[node name="TESTSTOPBUTTON" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_a2e82")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_a2e82")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_2d7e5")

@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://dc7i636o6id00"]
+
+[ext_resource type="Script" uid="uid://c1b2pne2eybt0" path="res://test_panel_lights.gd" id="1_4puij"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wlboa"]
+size = Vector3(0.88, 0.85, 0.255)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4puij"]
+data = PackedVector3Array(-0.44, 0.42499998, 0.1275, 0.44, 0.42499998, 0.1275, -0.44, -0.42499998, 0.1275, 0.44, 0.42499998, 0.1275, 0.44, -0.42499998, 0.1275, -0.44, -0.42499998, 0.1275, 0.44, 0.42499998, -0.1275, -0.44, 0.42499998, -0.1275, 0.44, -0.42499998, -0.1275, -0.44, 0.42499998, -0.1275, -0.44, -0.42499998, -0.1275, 0.44, -0.42499998, -0.1275, 0.44, 0.42499998, 0.1275, 0.44, 0.42499998, -0.1275, 0.44, -0.42499998, 0.1275, 0.44, 0.42499998, -0.1275, 0.44, -0.42499998, -0.1275, 0.44, -0.42499998, 0.1275, -0.44, 0.42499998, -0.1275, -0.44, 0.42499998, 0.1275, -0.44, -0.42499998, -0.1275, -0.44, 0.42499998, 0.1275, -0.44, -0.42499998, 0.1275, -0.44, -0.42499998, -0.1275, 0.44, 0.42499998, 0.1275, -0.44, 0.42499998, 0.1275, 0.44, 0.42499998, -0.1275, -0.44, 0.42499998, 0.1275, -0.44, 0.42499998, -0.1275, 0.44, 0.42499998, -0.1275, -0.44, -0.42499998, 0.1275, 0.44, -0.42499998, 0.1275, -0.44, -0.42499998, -0.1275, 0.44, -0.42499998, 0.1275, 0.44, -0.42499998, -0.1275, -0.44, -0.42499998, -0.1275)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahj8h"]
+emission_enabled = true
+emission = Color(10.764608, 0, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_u6isk"]
+material = SubResource("StandardMaterial3D_ahj8h")
+text = "PANEL
+By PanelCorp"
+font_size = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o88ab"]
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 1.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_wn8pv"]
+material = SubResource("StandardMaterial3D_o88ab")
+size = Vector3(0.145, 0.145, 0.11)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7flae"]
+data = PackedVector3Array(-0.0725, 0.0725, 0.055, 0.0725, 0.0725, 0.055, -0.0725, -0.0725, 0.055, 0.0725, 0.0725, 0.055, 0.0725, -0.0725, 0.055, -0.0725, -0.0725, 0.055, 0.0725, 0.0725, -0.055, -0.0725, 0.0725, -0.055, 0.0725, -0.0725, -0.055, -0.0725, 0.0725, -0.055, -0.0725, -0.0725, -0.055, 0.0725, -0.0725, -0.055, 0.0725, 0.0725, 0.055, 0.0725, 0.0725, -0.055, 0.0725, -0.0725, 0.055, 0.0725, 0.0725, -0.055, 0.0725, -0.0725, -0.055, 0.0725, -0.0725, 0.055, -0.0725, 0.0725, -0.055, -0.0725, 0.0725, 0.055, -0.0725, -0.0725, -0.055, -0.0725, 0.0725, 0.055, -0.0725, -0.0725, 0.055, -0.0725, -0.0725, -0.055, 0.0725, 0.0725, 0.055, -0.0725, 0.0725, 0.055, 0.0725, 0.0725, -0.055, -0.0725, 0.0725, 0.055, -0.0725, 0.0725, -0.055, 0.0725, 0.0725, -0.055, -0.0725, -0.0725, 0.055, 0.0725, -0.0725, 0.055, -0.0725, -0.0725, -0.055, 0.0725, -0.0725, 0.055, 0.0725, -0.0725, -0.055, -0.0725, -0.0725, -0.055)
+
+[node name="TEST_PANEL_LIGHTS" type="StaticBody3D"]
+collision_layer = 3
+script = ExtResource("1_4puij")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5097706, 0)
+mesh = SubResource("BoxMesh_wlboa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5097706, 0)
+shape = SubResource("ConcavePolygonShape3D_4puij")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8270873, 0.110726684)
+mesh = SubResource("TextMesh_u6isk")
+
+[node name="BUTTONPARENT_01" type="StaticBody3D" parent="."]
+input_capture_on_drag = true
+
+[node name="BUTTON_01" type="MeshInstance3D" parent="BUTTONPARENT_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24376065, 1.5922064, 0.09269899)
+mesh = SubResource("BoxMesh_wn8pv")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BUTTONPARENT_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24376065, 1.5922064, 0.09269899)
+shape = SubResource("ConcavePolygonShape3D_7flae")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3069527, 0.6778791)
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.523, 0.734)
+fov = 69.0
+
+[connection signal="input_event" from="BUTTONPARENT_01" to="." method="_on_buttonparent_01_input_event"]
+[connection signal="mouse_entered" from="BUTTONPARENT_01" to="." method="_on_buttonparent_01_mouse_entered"]

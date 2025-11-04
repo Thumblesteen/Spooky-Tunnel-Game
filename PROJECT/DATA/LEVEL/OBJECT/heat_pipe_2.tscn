@@ -1,0 +1,227 @@
+[gd_scene load_steps=28 format=3 uid="uid://c3ymo10nyo6sb"]
+
+[ext_resource type="Texture2D" uid="uid://dennl7ck12ul5" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/Grating.png" id="1_ycnm1"]
+[ext_resource type="Texture2D" uid="uid://bc1o0rgnqhpny" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/Grating_Shadow.png" id="2_b30kt"]
+[ext_resource type="Script" uid="uid://bgo8av0xyp1ds" path="res://DATA/LEVEL/OBJECT/heat_pipe_2.gd" id="2_vj3q8"]
+[ext_resource type="Texture2D" uid="uid://cpbubtd0t6r6r" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_04_disp_1k.png" id="4_vj3q8"]
+
+[sub_resource type="Gradient" id="Gradient_vj3q8"]
+offsets = PackedFloat32Array(0.41538462, 0.5769231)
+colors = PackedColorArray(0, 0, 0, 1, 1, 0.54901963, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t2he0"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oy48t"]
+noise = SubResource("FastNoiseLite_t2he0")
+color_ramp = SubResource("Gradient_vj3q8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cb05v"]
+render_priority = 1
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_ycnm1")
+uv1_scale = Vector3(0.675, 5.62, 1)
+grow = true
+grow_amount = 0.245
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kssry"]
+resource_local_to_scene = true
+next_pass = SubResource("StandardMaterial3D_cb05v")
+cull_mode = 2
+disable_fog = true
+metallic = 1.0
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+emission_texture = SubResource("NoiseTexture2D_oy48t")
+uv1_scale = Vector3(6.9, 3.99, 11.055)
+
+[sub_resource type="Curve" id="Curve_lufvk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qihjy"]
+curve = SubResource("Curve_lufvk")
+
+[sub_resource type="Curve" id="Curve_1c1ra"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.09090909, 0.764045), 0.0, 0.0, 0, 0, Vector2(0.5681818, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_o0wd0"]
+curve = SubResource("Curve_1c1ra")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jv8ot"]
+lifetime_randomness = 1.0
+particle_flag_align_y = true
+emission_shape_scale = Vector3(0.055, 13.665, 0.025)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+inherit_velocity_ratio = 0.284
+spread = 122.778
+flatness = 1.0
+initial_velocity_min = -55.5
+initial_velocity_max = 54.85
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 1.4999839
+radial_velocity_min = -1.1500223
+radial_velocity_max = 2.3499775
+gravity = Vector3(0, -20.445, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_o0wd0")
+emission_curve = SubResource("CurveTexture_qihjy")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 1.0
+collision_use_scale = true
+
+[sub_resource type="Curve" id="Curve_k8gv6"]
+_data = [Vector2(0, 0), 0.0, 0.798502, 0, 0, Vector2(0.6097561, 0.50561804), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.201759, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi656"]
+disable_fog = true
+emission_enabled = true
+emission = Color(0.8666667, 0.38039216, 0, 1)
+emission_energy_multiplier = 51.8
+grow_amount = 0.019
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_uamao"]
+material = SubResource("StandardMaterial3D_hi656")
+radius = 0.17
+section_length = 0.35
+curve = SubResource("Curve_k8gv6")
+
+[sub_resource type="Curve" id="Curve_t2he0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, 0), 0.0, 0.0, 0, 0, Vector2(0.5227273, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_kssry"]
+curve = SubResource("Curve_t2he0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lufvk"]
+lifetime_randomness = 0.65
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+emission_shape_scale = Vector3(1, 14.6, 0.84)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 0.0
+flatness = 1.0
+gravity = Vector3(0, 1.36, 0)
+radial_accel_min = -3.4500022
+radial_accel_max = 11.249997
+scale_min = 0.049999997
+scale_max = 4.95
+scale_curve = SubResource("CurveTexture_kssry")
+
+[sub_resource type="Curve" id="Curve_qihjy"]
+_data = [Vector2(0, 0), 0.0, 0.9652223, 0, 0, Vector2(0.27439028, 1), 0.0, 0.0, 0, 0, Vector2(0.7073171, 0.8988764), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.059551, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_qihjy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1c1ra"]
+frequency = 0.0935
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_o0wd0"]
+noise = SubResource("FastNoiseLite_1c1ra")
+color_ramp = SubResource("Gradient_qihjy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1c1ra"]
+cull_mode = 2
+depth_draw_mode = 2
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.03137255)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.4
+roughness_texture = ExtResource("4_vj3q8")
+roughness_texture_channel = 3
+refraction_enabled = true
+refraction_scale = -0.1
+refraction_texture = SubResource("NoiseTexture2D_o0wd0")
+refraction_texture_channel = 4
+grow_amount = 0.5
+stencil_flags = 2
+stencil_reference = 46
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_o0wd0"]
+material = SubResource("StandardMaterial3D_1c1ra")
+radius = 0.4
+radial_steps = 17
+sections = 4
+section_length = 0.221
+section_rings = 7
+curve = SubResource("Curve_qihjy")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vj3q8"]
+height = 30.0
+
+[node name="Heat_Pipe" type="StaticBody3D"]
+script = ExtResource("2_vj3q8")
+
+[node name="HeatPipe2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, -4.3711392e-08, -1, 0, 1.0000001, -4.371139e-08, 0, 0, 0)
+radius = 0.465
+height = 30.0
+material = SubResource("StandardMaterial3D_kssry")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.9739908, -13.914364)
+light_color = Color(1, 0.8, 0.007843138, 1)
+light_energy = 15.436
+light_volumetric_fog_energy = 10.89
+light_projector = ExtResource("2_b30kt")
+light_size = 0.423
+shadow_enabled = true
+omni_range = 16.78
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.48741364, 5.530567)
+light_color = Color(1, 0.8, 0.007843138, 1)
+light_energy = 17.136
+light_projector = ExtResource("2_b30kt")
+light_size = 0.423
+shadow_enabled = true
+omni_range = 16.78
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, -4.3711392e-08, -1, 0, 1.0000001, -4.371139e-08, 0, -0.7945465, 7.1054274e-15)
+amount = 205
+amount_ratio = 0.0
+lifetime = 0.49
+explosiveness = 1.0
+visibility_aabb = AABB(-15, -15, -15, 30, 30, 30)
+process_material = SubResource("ParticleProcessMaterial_jv8ot")
+draw_pass_1 = SubResource("TubeTrailMesh_uamao")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, -4.3711392e-08, -1, 0, 1.0000001, -4.371139e-08, 0, -1.0300534, 7.993606e-15)
+amount = 85
+lifetime = 1.35
+preprocess = 0.45
+randomness = 0.25
+fixed_fps = 15
+visibility_aabb = AABB(-15, -15, -15, 30, 30, 30)
+draw_order = 2
+transform_align = 2
+trail_lifetime = 2.3
+process_material = SubResource("ParticleProcessMaterial_lufvk")
+draw_pass_1 = SubResource("TubeTrailMesh_o0wd0")
+
+[node name="HeatCycler" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_vj3q8")
+
+[connection signal="finished" from="GPUParticles3D2" to="HeatPipe2" method="_on_gpu_particles_3d_2_finished"]
+[connection signal="timeout" from="HeatCycler" to="." method="_on_heat_cycler_timeout"]

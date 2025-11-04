@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnbbkbya4usc6"]
+
+[ext_resource type="Script" uid="uid://do7uy5sj4h3o5" path="res://DATA/LEVEL/ITEM/TOOLS/GNDScript.gd" id="1_02eiq"]
+[ext_resource type="PackedScene" uid="uid://bajgv8sw4n3h6" path="res://ASSETS/MESH/ITEMS/SLEDGE_HAMMER/sledge_hammer_low-poly (1).glb" id="2_v2r6n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hmaou"]
+rough = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kosa2"]
+height = 0.6578369
+radius = 0.020019531
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_51kwl"]
+height = 0.26358032
+radius = 0.020019531
+
+[node name="Sledge" type="RigidBody3D"]
+collision_layer = 6
+collision_mask = 5
+mass = 1.47
+physics_material_override = SubResource("PhysicsMaterial_hmaou")
+continuous_cd = true
+script = ExtResource("1_02eiq")
+sObjectToLoad = "res://DATA/LEVEL/ITEM/TOOLS/wpn_sledge_equip.tscn"
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_v2r6n")]
+transform = Transform3D(1.367714, 0, 0.97558093, 0, 1.68, 0, -0.97558093, 0, 1.367714, -0.039060265, 0, 0.020979911)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-7.343513e-08, 1.68, 0, -1.68, -7.343513e-08, 0, 0, 0, 1.68, -0.046897948, 0.031618714, -0.010146797)
+shape = SubResource("CylinderShape3D_kosa2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.2099514e-15, -7.343513e-08, -1.68, -1.68, -7.343513e-08, 0, -7.343513e-08, 1.68, -7.343513e-08, 0.48001796, 0.031618714, 0.018508911)
+shape = SubResource("CylinderShape3D_51kwl")

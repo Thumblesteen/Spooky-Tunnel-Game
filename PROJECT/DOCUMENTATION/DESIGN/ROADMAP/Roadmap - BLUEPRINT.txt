@@ -1,0 +1,90 @@
+STAGE 1: 
+	Roadmapping. 
+	Come up with what you want, how it works, what needs doing, and what may be
+	needing doing after what needs doing has been done. Break up core components
+	and mechanics and resources and designs. Storyboard, build the world, make
+	good plans so that you never feel lost. Predict contradictions, resolve 
+	possible scaling issues.
+
+STAGE 2:
+	Storyboarding and Blueprinting: 
+	Setting, story and gameplay mechanics must be developed in tandem as to 
+	assure they fit together. Too many games make the mistake of treating the
+	physical and the noospheric as separate entities. But much like the Ouroboros,
+	they feed upon eachother in a paradoxical contingency.
+	
+	- Figure out narrative
+	- Figure out degree of linearity
+	- Figure out gameplay mechanics
+	- Figure out plot conflict
+	- Figure out meta gameplay
+	- Figure out system design
+	- Figure out UX
+	- Figure out worldbuilding
+	- Figure out lore
+	- Figure out context for setting
+	- Figure out setting
+	- Figure out distinctive features of atmosphere and game
+	- Figure out design goals
+	- Figure out the feeling and depth of the game and its setting
+	- Figure out best ways to represent the setting
+	- Figure out expressive content that comes out of the setting
+	- Figure out if the story has anything important to say and how to say it  
+	- Figure out how to make it memorable
+	- Figure out what's fun about it
+	- Figure out characters
+
+STAGE 3: 
+	Prototyping: 
+		
+	The prototyping stage is probably the one I have the easiest time doing, I
+	not only make solid prototypes, but they're usually very reliable and 
+	functional even prior to quality assurance and revisions. I think it's 
+	because I have a set of rules I follow when I code, which makes it so my
+	code is always broken down into methods that are designed to be very 
+	optimised and non-invasive to other inputs. It leads to considerably less
+	abstracted contradictions, this is why I can run 700 lines of code without
+	too much bother from the profiler. It's because in actuality I run more akin
+	to 40 lines of code at any given time. Remember fellow coders: It's not about
+	the frame, it's about the second. 
+	
+	
+		Make a controller
+		Make physics system
+		Make a test level
+		Make core gameplay mechanics
+		Make environmental mechanics
+		Make data mechanics 
+		Make test items
+		Make test weapons
+		Make test interactions
+		Make stats system
+		Make a test combat NPC
+		Make a test dialogue NPC
+		Make some test traps
+
+STAGE 4: 
+	Vertical slice: 
+		
+	Time to make a test area, likely what will become the demo hopefully. It will
+	have some cool stuff and ideally reflect how the game will play, keeping 
+	perhaps a card or two close to my chest. 
+		
+		Make a playable level
+		Apply quality standards to prototypes 
+		Flesh out and expand gameplay mechanics
+		Add feel and polish 
+		Create content variations
+		Create the first iteration of SLIME. 
+
+STAGE 5: 
+	Horizontal Slice
+	The hardest and also I suspect easiest part of the process, actually making
+	the game. 
+	
+	Worldbuilding
+	Design missions
+	Write dialogue
+	Implement characters
+	Add lore books and documents
+	Add props

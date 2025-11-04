@@ -1,0 +1,394 @@
+[gd_scene load_steps=28 format=3 uid="uid://utwsb4dij1gi"]
+
+[ext_resource type="Script" uid="uid://c2p7vunuxwb3y" path="res://Tinted/Scripts/Engine/EngineSystems/cooling_system.gd" id="1_1n8es"]
+[ext_resource type="Script" uid="uid://rx2067qq2jh" path="res://Tinted/Scripts/Engine/water_pump_box.gd" id="3_36t4x"]
+[ext_resource type="Script" uid="uid://cwsswgbkgroyo" path="res://DATA/LEVEL/OBJECT/activator.gd" id="4_x657o"]
+[ext_resource type="PackedScene" uid="uid://7ek56x5dbu5q" path="res://Tinted/Scenes/CustomPipes/pipe_quarter.tscn" id="5_hjuax"]
+[ext_resource type="PackedScene" uid="uid://bgrtyfgv645v4" path="res://Tinted/Scenes/EngineSystems/valve_function.tscn" id="6_mieoq"]
+[ext_resource type="PackedScene" uid="uid://dmg8gqutbf5tn" path="res://Tinted/Scenes/CustomModel/spigot.tscn" id="7_f51tx"]
+[ext_resource type="PackedScene" uid="uid://clvgnqs0c8rpt" path="res://Tinted/Scenes/FlowingLiquid/Coolant_Flowing_SciFi_More.tscn" id="8_getjm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4d52"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7uo4q"]
+albedo_color = Color(1.2935139e-07, 0, 0.1570226, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjxyy"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e0ja2"]
+blend_mode = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mg70"]
+next_pass = SubResource("CanvasItemMaterial_e0ja2")
+shading_mode = 2
+diffuse_mode = 1
+albedo_color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbg0s"]
+transparency = 1
+albedo_color = Color(0.3242198, 0.8814187, 0.9733617, 0.30980393)
+
+[sub_resource type="Gradient" id="Gradient_2b5mv"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(-0.202, -0.202, 0.17058824, 0.5529412)
+colors = PackedColorArray(0, 0.64, 0.39466673, 0.61960787, 1, 1, 1, 0.1764706, 0, 0.84066683, 0.97, 0.827451, 0, 0, 0, 0.1764706)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_v6wum"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ro501"]
+width = 747
+height = 1447
+noise = SubResource("FastNoiseLite_v6wum")
+color_ramp = SubResource("Gradient_2b5mv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti486"]
+blend_mode = 3
+cull_mode = 2
+shading_mode = 2
+diffuse_mode = 2
+specular_mode = 1
+albedo_color = Color(0, 0.73, 0.5231667, 0.69411767)
+albedo_texture = SubResource("NoiseTexture2D_ro501")
+emission_enabled = true
+emission = Color(0, 0.41, 0.34166664, 1)
+emission_energy_multiplier = 0.43
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3py0c"]
+size = Vector3(0.56518555, 0.9682007, 0.98706055)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djail"]
+albedo_color = Color(0.2284644, 0.22576326, 0.22846454, 1)
+
+[sub_resource type="Animation" id="Animation_qmecu"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_hegoe"]
+resource_name = "waterPumpLid_function"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lid_function/BoxLid:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2, 2.25, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.6675906, -3.2088661, 2.647788), Vector3(-1.6675906, -3.0346565, 2.647788), Vector3(-1.8717117, -3.034668, 2.647788), Vector3(-1.9847207, -3.091278, 2.647788), Vector3(-1.9847207, -3.4641, 2.647788), Vector3(-1.9847207, -3.4987335, 2.647788), Vector3(-1.9847207, -3.5046234, 2.647788)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lid_function/BoxLid:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 1.5, 2, 2.25, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.5440715), Vector3(0, 0, 1.0029883), Vector3(-0.063320555, -1.1662768e-10, 1.5516326), Vector3(-0.063320555, -2.3325536e-10, 1.5516326), Vector3(0.03167773, -4.7438714e-10, 1.5516326), Vector3(0.001518438, -3.467592e-10, 1.5516326)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ucvt"]
+_data = {
+&"RESET": SubResource("Animation_qmecu"),
+&"waterPumpLid_function": SubResource("Animation_hegoe")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7used"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_5d4hp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TankGeometry/CSGCylinder3D3/CSGCombiner3D/Coolant:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.23204148, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TankGeometry/CSGCylinder3D3/CSGCombiner3D/Coolant:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.1943822, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TankGeometry/CSGCylinder3D3/CSGCombiner3D/Coolant2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 6.6523194, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h4l68"]
+resource_name = "coolant_drain"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TankGeometry/CSGCylinder3D3/CSGCombiner3D/Coolant:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TankGeometry/CSGCylinder3D3/CSGCombiner3D/Coolant:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TankGeometry/CSGCylinder3D3/CSGCombiner3D/Coolant2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 6.6523194, 0), Vector3(0, 2.5558887, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5cp8d"]
+resource_name = "coolant_flow"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TankGeometry/CSGCylinder3D3/CSGCombiner3D/Coolant:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 60),
+"transitions": PackedFloat32Array(1, 1.0000002),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4l68"]
+_data = {
+&"RESET": SubResource("Animation_5d4hp"),
+&"coolant_drain": SubResource("Animation_h4l68"),
+&"coolant_flow": SubResource("Animation_5cp8d")
+}
+
+[node name="CoolingSystem" type="Node3D" node_paths=PackedStringArray("valve")]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_1n8es")
+valve = NodePath("ValveFunction")
+full_height = 8.424
+
+[node name="TankGeometry" type="Node3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="TankGeometry"]
+transform = Transform3D(-4.371109e-08, 0.99999493, 4.371109e-08, 0, -4.371109e-08, 0.99999493, 1, 4.371139e-08, 1.9106855e-15, -1.2605759, -2.8871894, 0.009966772)
+radius = 0.21875
+height = 0.3807373
+material = SubResource("StandardMaterial3D_c4d52")
+
+[node name="CoolantTank" type="CSGCylinder3D" parent="TankGeometry"]
+transform = Transform3D(0.99997455, 0, 0, 0, 0.99997455, 0, 0, 0, 1, 0, -2.9269392, 0)
+radius = 1.4160156
+height = 1.9073486
+material = SubResource("StandardMaterial3D_7uo4q")
+
+[node name="CoolantTank5" type="CSGCylinder3D" parent="TankGeometry"]
+transform = Transform3D(0.99997145, 0, 0, 0, 0.99997145, 0, 0, 0, 1, 0, 3.3065221, 0)
+radius = 1.4160156
+height = 1.3970337
+material = SubResource("StandardMaterial3D_7uo4q")
+
+[node name="CoolantTank2" type="CSGCylinder3D" parent="TankGeometry"]
+transform = Transform3D(-0.21031526, 0, 0.9776329, 0, 0.9999862, 0, -0.9776196, 0, -0.21031816, 0, -3.6009178, 0)
+radius = 1.5849609
+height = 0.5593872
+sides = 12
+material = SubResource("StandardMaterial3D_tjxyy")
+
+[node name="CoolantTank3" type="CSGCylinder3D" parent="TankGeometry"]
+transform = Transform3D(-0.21031435, 0, 0.97762924, 0, 0.99998254, 0, -0.9776196, 0, -0.21031816, 0, -1.9422777, 0)
+top_level = true
+radius = 1.5849609
+height = 0.20730591
+sides = 12
+material = SubResource("StandardMaterial3D_8mg70")
+
+[node name="CoolantTank4" type="CSGCylinder3D" parent="TankGeometry"]
+transform = Transform3D(-0.21031429, 0, 0.977629, 0, 0.9999823, 0, -0.9776196, 0, -0.21031816, 0, 2.7022336, 0)
+radius = 1.5849609
+height = 0.20730591
+sides = 12
+material = SubResource("StandardMaterial3D_8mg70")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="TankGeometry"]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 1, 0, 0.35321042, -0.0015366077)
+radius = 1.4951172
+height = 4.6654053
+sides = 16
+material = SubResource("StandardMaterial3D_mbg0s")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="TankGeometry"]
+transform = Transform3D(0.99998504, 0, 0, 0, 0.99998504, 0, 0, 0, 1, 0, -1.9154446, 0)
+operation = 2
+radius = 1.4697266
+height = 0.12808228
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="TankGeometry/CSGCylinder3D3"]
+
+[node name="Coolant" type="CSGCylinder3D" parent="TankGeometry/CSGCylinder3D3/CSGCombiner3D"]
+transform = Transform3D(0.9729605, 0, 0.22996753, 0, 0.9999215, 0, -0.2299084, 0, 0.9732107, 0, 2.1943822, 0)
+radius = 1.3759766
+height = 4.296771
+sides = 34
+material = SubResource("StandardMaterial3D_ti486")
+
+[node name="Coolant2" type="CSGCylinder3D" parent="TankGeometry/CSGCylinder3D3/CSGCombiner3D"]
+transform = Transform3D(1.065, 0, 1.8621252e-07, 0, 1.065, 0, -1.8621252e-07, 0, 1.065, 0, 6.6523194, 0)
+operation = 2
+radius = 1.3759766
+height = 4.4058347
+sides = 34
+material = SubResource("StandardMaterial3D_ti486")
+
+[node name="WaterPumpBox" type="Node3D" parent="."]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 1, -0.39151564, 0.096406914, -0.118174314)
+script = ExtResource("3_36t4x")
+
+[node name="lid_function" type="StaticBody3D" parent="WaterPumpBox"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 3
+script = ExtResource("4_x657o")
+
+[node name="BoxLid" type="CSGBox3D" parent="WaterPumpBox/lid_function"]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999964, -1.6675906, -3.2088661, 2.647788)
+size = Vector3(0.58380127, 0.03918457, 1.019165)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="WaterPumpBox/lid_function/BoxLid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21717691, 0.0069732666, 0)
+operation = 2
+radius = 0.024902344
+height = 0.041046143
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterPumpBox/lid_function"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6670603, -3.4513056, 2.6500149)
+shape = SubResource("BoxShape3D_3py0c")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="WaterPumpBox"]
+use_collision = true
+collision_layer = 3
+
+[node name="WaterPumpBox" type="CSGBox3D" parent="WaterPumpBox/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6704898, -3.502472, 2.6489477)
+size = Vector3(0.5678711, 0.56469727, 1)
+
+[node name="WaterPumpBox2" type="CSGBox3D" parent="WaterPumpBox/CSGCombiner3D"]
+transform = Transform3D(0.9999958, 0, 0, 0, 0.9999958, 0, 0, 0, 1, -1.6649356, -3.4789238, 2.649375)
+operation = 2
+size = Vector3(0.48986816, 0.5209961, 0.9022217)
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="WaterPumpBox/CSGCombiner3D"]
+transform = Transform3D(0.9999753, 0, 0, 0, -4.3709914e-08, 0.9999753, 0, -1, -4.371139e-08, -1.6604867, -3.4211273, 2.6581278)
+radius = 0.18017578
+height = 0.81375885
+sides = 12
+material = SubResource("StandardMaterial3D_djail")
+
+[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="WaterPumpBox/CSGCombiner3D"]
+transform = Transform3D(0.99996704, 0, 0, 0, -4.370942e-08, 0.99996704, 0, -1, -4.371139e-08, -1.6604867, -3.4211273, 2.6437588)
+radius = 0.19628906
+height = 0.6167698
+sides = 12
+material = SubResource("StandardMaterial3D_djail")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WaterPumpBox/CSGCombiner3D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_8ucvt")
+}
+
+[node name="Piping" type="Node3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Piping"]
+transform = Transform3D(-4.3711378e-08, 0.99999976, 4.3711378e-08, 0, -4.3711378e-08, 0.99999976, 1, 4.371139e-08, 1.9106855e-15, -1.0581557, -3.422305, 13.082043)
+radius = 0.15771484
+height = 1.3568115
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Piping"]
+transform = Transform3D(-4.3710905e-08, 0.99999183, 4.3710905e-08, 0, -4.3710905e-08, 0.99999183, 1, 4.371139e-08, 1.9106855e-15, -1.4475888, -2.8871994, 0.016198117)
+radius = 0.15771484
+height = 0.38879395
+sides = 12
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Piping"]
+transform = Transform3D(1, 0, 0, 0, 0.29612482, 0.9551493, 0, -0.9551493, 0.29612482, -2.063148, -3.134882, 1.2353609)
+radius = 0.13964844
+height = 1.7597046
+sides = 12
+
+[node name="pipe_quarter" parent="Piping" instance=ExtResource("5_hjuax")]
+transform = Transform3D(0.4266074, -0.40756115, -2.0759055e-08, 4.4393245e-09, -2.5404763e-08, 0.59, -0.40756115, -0.4266074, -1.5302652e-08, -1.62288, -2.88855, 0.44652078)
+
+[node name="Valves" type="Node3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Valve2" type="CSGCylinder3D" parent="Valves"]
+transform = Transform3D(1.9106855e-15, 7.3014374e-30, 0.99999994, -4.3711385e-08, 0.99999994, 1.5957799e-37, -1, -4.371139e-08, 1.9106855e-15, 0.6930465, 3.9534566, 0.68274784)
+radius = 0.3310547
+height = 0.22753906
+material = SubResource("StandardMaterial3D_7used")
+
+[node name="Valve3" type="CSGCylinder3D" parent="Valves"]
+transform = Transform3D(1.9106855e-15, 7.3014374e-30, 0.99999994, -4.3711385e-08, 0.99999994, 1.5957799e-37, -1, -4.371139e-08, 1.9106855e-15, 0.69435304, 4.0676303, 0.6934242)
+radius = 0.26464844
+height = 0.22753906
+material = SubResource("StandardMaterial3D_7used")
+
+[node name="ValveFunction" parent="." instance=ExtResource("6_mieoq")]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0.041708216, 0, -0.009831905)
+
+[node name="Spigot" parent="ValveFunction" instance=ExtResource("7_f51tx")]
+transform = Transform3D(0.6049999, 0, 0, 0, 0.6049999, 0, 0, 0, 0.605, -0.06680401, -3.5312107, 1.4173601)
+
+[node name="FlowingCoolant" parent="ValveFunction/Spigot" instance=ExtResource("8_getjm")]
+unique_name_in_owner = true
+transform = Transform3D(4.9260045e-08, 0, -1.6528925, 0, 1.6528922, 0, 1.6528919, 0, -4.9260034e-08, -0.009315338, 1.5942206, 0.53231597)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h4l68")
+}
+autoplay = "coolant_drain"

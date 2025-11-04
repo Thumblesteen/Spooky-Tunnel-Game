@@ -1,0 +1,521 @@
+[gd_scene load_steps=34 format=3 uid="uid://dj25teat50hnx"]
+
+[ext_resource type="Script" uid="uid://5il0sp0by4h3" path="res://DATA/LEVEL/OBJECT/door_system.gd" id="1_r7b2r"]
+[ext_resource type="Script" uid="uid://cwsswgbkgroyo" path="res://DATA/LEVEL/OBJECT/activator.gd" id="2_5x1kp"]
+[ext_resource type="Material" uid="uid://bo76k565ckjtm" path="res://DATA/Shaders/Surfaces/Chevron_Rusty.tres" id="3_khe54"]
+[ext_resource type="Material" uid="uid://s8537gqjjjmn" path="res://DATA/LEVEL/FX/Particles/Sparks_ProcessMat.tres" id="5_r7b2r"]
+[ext_resource type="Texture2D" uid="uid://clb2iqaytba0v" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_04_diff_1k.jpg" id="5_wy1xy"]
+[ext_resource type="TubeTrailMesh" uid="uid://bnhja3yn6madh" path="res://DATA/LEVEL/FX/Particles/sparks_DrawPass.tres" id="6_5x1kp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r7b2r"]
+size = Vector3(1.8433838, 2.6157227, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xk8f0"]
+material = ExtResource("3_khe54")
+size = Vector3(2, 3, 0.25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xk8f0"]
+data = PackedVector3Array(-1, 1.5, 0.125, 1, 1.5, 0.125, -1, -1.5, 0.125, 1, 1.5, 0.125, 1, -1.5, 0.125, -1, -1.5, 0.125, 1, 1.5, -0.125, -1, 1.5, -0.125, 1, -1.5, -0.125, -1, 1.5, -0.125, -1, -1.5, -0.125, 1, -1.5, -0.125, 1, 1.5, 0.125, 1, 1.5, -0.125, 1, -1.5, 0.125, 1, 1.5, -0.125, 1, -1.5, -0.125, 1, -1.5, 0.125, -1, 1.5, -0.125, -1, 1.5, 0.125, -1, -1.5, -0.125, -1, 1.5, 0.125, -1, -1.5, 0.125, -1, -1.5, -0.125, 1, 1.5, 0.125, -1, 1.5, 0.125, 1, 1.5, -0.125, -1, 1.5, 0.125, -1, 1.5, -0.125, 1, 1.5, -0.125, -1, -1.5, 0.125, 1, -1.5, 0.125, -1, -1.5, -0.125, 1, -1.5, 0.125, 1, -1.5, -0.125, -1, -1.5, -0.125)
+
+[sub_resource type="Animation" id="Animation_wy1xy"]
+resource_name = "ACTIVATE"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_Shuttle_2x3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.47, 0.68, 0.86, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -0.19, 0), Vector3(0, -0.19, 0), Vector3(0, -3.015, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_Shuttle_2x3/MeshInstance3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.46, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door_Shuttle_2x3/CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.44, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Door_Shuttle_2x3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.2048493, 0.26603806, 0.3431891, 0.40437785, 0.46822697, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0.02617994), Vector3(0, 0, -0.02617994), Vector3(0, 0, 0.02617994), Vector3(0, 0, -0.02617994), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GPUParticles3D:amount_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.91305494, 1, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_r7b2r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_Shuttle_2x3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_Shuttle_2x3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles3D:amount_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GPUParticles3D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.85305816, 0.85647905, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GPUParticles3D2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5124326)]
+}
+
+[sub_resource type="Animation" id="Animation_khe54"]
+resource_name = "BUMP"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_Shuttle_2x3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07605014, 0.23411348, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.07853982, 0.19198622), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_Shuttle_2x3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.55335915, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -2.99, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5x1kp"]
+resource_name = "BUMP_FAIL"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_Shuttle_2x3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07605014, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.07853982, 0.19198622), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_Shuttle_2x3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m7kc0"]
+resource_name = "BUMP_FAIL_02"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_Shuttle_2x3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07605014, 0.13537365, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.07853982, 0.19198622), Vector3(-0.017453292, 0.061086524, 0.40142572), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_Shuttle_2x3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w8rcs"]
+resource_name = "BUMP_FAIL_03"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_Shuttle_2x3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07605014, 0.13537365, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.07853982, 0.19198622), Vector3(-0.017453292, 0.061086524, 0.40142572), Vector3(-0.017453292, 0.061086524, 0.40142572)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_Shuttle_2x3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles3D:amount_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_hxmb5"]
+resource_name = "BUMP_FAIL_JAM"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_Shuttle_2x3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08657617, 0.13852187, 0.23333333, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.017453292, 0.061086524, 0.40142572), Vector3(0.017453292, -0.02617994, 0.09599311), Vector3(0.017453292, -0.02617994, -0.33161256), Vector3(0.017453292, -0.02617994, -0.33161256), Vector3(-0.017453292, 0, -0.33161256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_Shuttle_2x3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08657617, 0.13333334, 0.22085223, 0.32952556, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.72, 0), Vector3(0, -0.72, 0), Vector3(0, 0.16, 0), Vector3(0, 0.16, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles3D:amount_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.07011182, 0.2699305, 0.33333334, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GPUParticles3D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.85305816, 0.85647905, 0), Vector3(-0.853828, 0.85647905, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GPUParticles3D2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5124326), Vector3(0, 0, 1.5124326)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5x1kp"]
+_data = {
+&"ACTIVATE": SubResource("Animation_wy1xy"),
+&"BUMP": SubResource("Animation_khe54"),
+&"BUMP_FAIL": SubResource("Animation_5x1kp"),
+&"BUMP_FAIL_02": SubResource("Animation_m7kc0"),
+&"BUMP_FAIL_03": SubResource("Animation_w8rcs"),
+&"BUMP_FAIL_JAM": SubResource("Animation_hxmb5"),
+&"RESET": SubResource("Animation_r7b2r")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7b2r"]
+albedo_texture = ExtResource("5_wy1xy")
+uv1_scale = Vector3(0.16, 2.38, 2.345)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5x1kp"]
+material = SubResource("StandardMaterial3D_r7b2r")
+size = Vector3(0.195, 3, 0.45)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m7kc0"]
+material = SubResource("StandardMaterial3D_r7b2r")
+size = Vector3(0.195, 2.26, 0.475)
+
+[sub_resource type="Curve" id="Curve_wy1xy"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5217391, 1), 6.977528, 6.977528, 0, 0, Vector2(0.7487923, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_r7b2r"]
+curve = SubResource("Curve_wy1xy")
+
+[sub_resource type="Curve" id="Curve_5x1kp"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 43.82023), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_m7kc0"]
+curve = SubResource("Curve_5x1kp")
+
+[sub_resource type="Curve" id="Curve_w8rcs"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5169082, 0.49438208), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_hxmb5"]
+curve = SubResource("Curve_w8rcs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t2tfl"]
+particle_flag_rotate_y = true
+emission_shape_scale = Vector3(0.925, 0.14, 0.215)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+inherit_velocity_ratio = 0.6
+spread = 46.34
+initial_velocity_min = -0.29999998
+initial_velocity_max = 0.59999996
+gravity = Vector3(0, 3.99, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 3.9599977
+damping_min = 0.305
+damping_max = 2.1200001
+damping_curve = SubResource("CurveTexture_m7kc0")
+scale_min = 0.84999996
+scale_max = 6.3999996
+scale_curve = SubResource("CurveTexture_hxmb5")
+color = Color(1, 1, 1, 0.47843137)
+alpha_curve = SubResource("CurveTexture_r7b2r")
+
+[sub_resource type="Curve" id="Curve_kv6a4"]
+_data = [Vector2(0, 0), 0.0, 2.2022474, 0, 0, Vector2(0.4878049, 0.77528095), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.223945, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_jt2ho"]
+offsets = PackedFloat32Array(0, 0.45945945, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.288518, 0.28851798, 0.28851798, 1, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hidti"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ghugj"]
+noise = SubResource("FastNoiseLite_hidti")
+color_ramp = SubResource("Gradient_jt2ho")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25pi7"]
+transparency = 3
+alpha_hash_scale = 0.65
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.5176471)
+albedo_texture = SubResource("NoiseTexture2D_ghugj")
+grow = true
+grow_amount = 0.405
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_ldlbh"]
+material = SubResource("StandardMaterial3D_25pi7")
+shape = 0
+size = 0.61
+section_length = 0.35
+curve = SubResource("Curve_kv6a4")
+
+[node name="Door_Shuttle_2x3" type="Node3D"]
+script = ExtResource("1_r7b2r")
+
+[node name="Activator" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_5x1kp")
+metadata/Instructions = "USE DOOR"
+
+[node name="ActivateField" type="CollisionShape3D" parent="Activator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008605957, 1.6921387, 0)
+shape = SubResource("BoxShape3D_r7b2r")
+
+[node name="Door_Shuttle_2x3" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door_Shuttle_2x3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_xk8f0")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_Shuttle_2x3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+visible = false
+shape = SubResource("ConcavePolygonShape3D_xk8f0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5x1kp")
+}
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)
+mesh = SubResource("BoxMesh_5x1kp")
+skeleton = NodePath("../Door_Shuttle_2x3")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.0063677114, 3, 0)
+mesh = SubResource("BoxMesh_m7kc0")
+skeleton = NodePath("../Door_Shuttle_2x3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0)
+mesh = SubResource("BoxMesh_5x1kp")
+skeleton = NodePath("../Door_Shuttle_2x3")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4111279, 0)
+amount = 40
+amount_ratio = 0.0
+lifetime = 3.15
+speed_scale = 0.75
+transform_align = 1
+trail_enabled = true
+trail_lifetime = 1.1
+process_material = SubResource("ParticleProcessMaterial_t2tfl")
+draw_pass_1 = SubResource("RibbonTrailMesh_ldlbh")
+
+[node name="SmokeBalancer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.761092, -0.07730865, 0.64402056, 0.59954053, -0.2951069, -0.74395126, 0.24756874, 0.9523316, -0.1782538, 0.9531814, 0.091211915, -0.49739885)
+light_energy = 7.9
+light_volumetric_fog_energy = 0.115
+light_specular = 2.02
+shadow_enabled = true
+spot_range = 3.0
+spot_angle = 26.412428
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.9659259, 1.31125155e-08, 0.25881907, 0.25699037, 0.11866388, -0.959101, -0.030712487, 0.99293447, 0.1146205, 1.0087863, 0.047403634, 0.30488384)
+light_energy = 14.915
+light_volumetric_fog_energy = 0.115
+light_specular = 3.66
+shadow_enabled = true
+spot_range = 3.0
+spot_angle = 18.720951
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.05833062, -0.99829733, 0, 0.99829733, 0.05833062, 0, 0, 0, 1, 0.85305816, 0.85647905, 0)
+amount = 15
+amount_ratio = 0.0
+lifetime = 1.22
+explosiveness = 1.0
+randomness = 1.0
+trail_enabled = true
+process_material = ExtResource("5_r7b2r")
+draw_pass_1 = ExtResource("6_5x1kp")
+
+[connection signal="timeout" from="SmokeBalancer" to="." method="_on_smoke_balancer_timeout"]

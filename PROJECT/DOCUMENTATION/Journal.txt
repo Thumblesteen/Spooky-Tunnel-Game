@@ -1,0 +1,217 @@
+18 OCT 25:
+	Experienced a new emotion today, it's a bit like dread, except more dreadful,
+	I call it Superdread and it feels a bit like how I'd imagine it would feel if
+	you were a sentient field of flesh made entirely out of nerve endings, being
+	tilled by a million devils who are trying to grow vines of barbed wire through
+	your tissue. 
+	
+	So I figured that maybe I could feel a bit better by keeping a journal as I
+	work. 
+	
+	I've just abandoned a project, and I do that a lot. But I think that might
+	be a good thing, because each time I go a little further along. I always
+	leave with new experience, and often an improved product. I think the reason
+	why is because I look at the project down the line, and examine its core
+	weaknesses in comparison to the wealth of knowledge and resources that I am
+	currently possessing and as well as a margin proportional to what I may be
+	possessing at that future point of time, and if I begin to see critical 
+	contradictions in the scope and long-term gameplay, then I tend to axe the
+	project. 
+	
+	Current limitations: 
+		MAPPING AND NAVMESHING. I am new to navigation code, and I think it is
+		better to do the simple thing well than to do the ambitious thing poorly.
+		As such, I figured an enclosed environment with corridors and rooms and
+		with little to no verticality is a great way to start off.
+		
+		Moreover, it is extremely rare that I see a game with complex geometry 
+		have particularly noteworthy AI. Half-Life, Arma 2... and that's about
+		it. No one ever played Skyrim and thought "Wow, I love how the AI makes
+		good use of the terrain and rely on clever strategy."
+		
+		Although I hear Fallout 4's AI can be kinda sick if you mod it. 
+		
+		Point is, by setting my game in a set of utility tunnels, I can make 
+		actual good NPCs, I'll just have to give them fun and complex behaviours
+		to make up for how they don't know how to climb ladders. 
+	
+		VOICE ACTING: 
+			I am a solo dev, and while I can do frankly an outrageous amount of
+			accents (including the forbidden ones), truth is, I'm best sticking
+			with an isolated environment where voices are few. But also give the
+			game a bit of charm using SLIME. 
+		
+		ASSETS:
+			I am not great at 3D, and even if I was, high quality 3D takes a lot
+			of time that I lack. So I will be shopping at the Creative Commons
+			for a lot of the complex props. I'm really good at shaders and I know
+			how to clean up and optimise mesh data, so I will be fixing up a lot 
+			of these assets and make sure that they have even light levels and 
+			basically do my absolute best to give them polish and adaptation. 
+			
+			So yes, I'm recycling assets, but I do it more in a way that a 
+			recycling plant does it, with some actual work and effort.
+			
+			I will also be scripting and animating everything since that's really
+			my strength. I suck at pretty much everything besides coding and design.
+			Thankfully those are the two baseline requirements to make a good game.
+			No one ever praised Mojang for their art department, that's all I'm
+			saying. 
+		
+		BUDGET:
+			This is where resourcefulness really comes in. I have a budget of 
+			0. This is why I have to always think one step ahead, I got no 
+			bailouts or handouts or safety nets or silver spoons. Need to be
+			really clever and stay one step ahead of downfall. 
+			
+			But, I got sketchfab for props, fuse for characters, Mixamo for
+			animations and pixabay for sounds. 
+			
+			And that may sound derivative and creatively bankrupt, but personally
+			I'd beg to differ. Bespoke or not, anything looks bad when you don't
+			make an effort and only think about money. 
+			
+			Stonehenge, the Pyramids and French châteaus are all the same derivative
+			mountain slop, but people still like them, don't they? That's because
+			they have labours in them. Labours makes things sacred, gives them
+			meaning and depth. You can breathe life into anything if you just 
+			make an effort to believe. 
+		
+		TIME: 
+			My life has been postponed a great deal by a series of unforeseen
+			circumstances. I need to find a purpose. So I don't want to linger
+			too much on my first project. I want to make enough money to feel
+			established in my career as a game developer. Obviously I want a 
+			product that gives quality and entertainment. I want to do this as
+			an authentic game developer. I'm not greedy, just a little bit 
+			desperate. But I don't intend to lower the quality of the product
+			to cut corners. Rather, I am looking towards ways of efficiency. 
+			
+			Free assets is a big part of that of course, so is the setting and
+			the limited characters. But I think time constraint will result
+			in more cut content. That's fine though, people like cut content,
+			it gives them little mysteries to explore. And I really like those
+			youtube videos about cut content. That's actually why I am trying to
+			document things a lot. If I am taking this seriously, then I should
+			work with the assumption that people will be curious about my work.
+			
+			Not in an arrogant kind of way, more in a "Only 0.3% of the human
+			population knows how to write code"-kind of way. Even dull people
+			become interesting when they know something others don't. 
+
+		I would ideally depict real self harm for the blood magic, but I know 
+		there will be a slew of whiny liberals who always complain about it. 
+		They claim it's for how we need to be compassionate about mental health 
+		or whatever, but I kind of doubt it. Never seems to come from a place of
+		compassion. 
+		
+		I think the real reason is because liberalism has a limit in what it is
+		allowed to solve. Anything related to class systems, or institutions of
+		power is always relegated to a category of discussive sacredness. 
+		
+		Where it becomes part of this universe of endless circular discussion
+		about the discussion itself, with endless whataboutisms and ideology 
+		about "how to approach" certain subjects. 
+		
+		So any effort to demystify this sacred stalling tactic is met with knee
+		jerk reaction. Just look at all the circular bullshit about race or
+		indigenous people. They've been figuring out "how to approach" these
+		subjects for just short of a century now. It's a method of gaslighting
+		and censorship intended to keep people from reaching any real conclusions.
+		
+		Just look at Malcolm X's parable of the fox and the wolf. 
+		
+		For example: The indigenous issue is obvious. Because we've seen it play
+		out in any number of historical scenarios. And whether it's Mozambique,
+		Burkina Faso, India, China, Viet Nam, Cuba, South Africa, Haiti, East Indies, 
+		Polynesia, whatever else, the first and foremost thing done is land reforms. 
+		
+		It's textbook. You give a civilisation land, they use the land as means 
+		of productions, this in result gives them the power needed to repair their 
+		societies and prosper. They don't need pontification, they need resources
+		to grow and follow whatever goals they deem worthwhile as a people. 
+		
+		Does it fix everything? Of course not, but it gives people a chance to 
+		actually gain self-determination and shape their own future, which is a 
+		very useful and very practical thing. 
+		
+		And to this day, not one liberal politician has done so unless threatened
+		by insurrectionary warfare from indigenous peasant rebels. 
+		
+		So we got this whole wing of progressive academia dedicated to making 
+		this very obvious set of facts as controversial as humanly possible.
+		
+		And why is that? Simple: Liberalism was invented by slaveowners to spare
+		them the French guillotine. It's a scam. Always has been. A stalling
+		tactic for history's stingiest negotiators. Liberalism is freedom as
+		defined by slavers, and it's stupid. Sadly the same slave owners also 
+		invested heavily into what has today become the modern news media, so
+		some cultural topics are off limits for me unless I want to be tarred
+		and feathered by brainwashed idiots.
+		
+		Mind you, conservatives aren't much better, but at least they make their
+		motives honest. Conservatives stab you in the belly, liberals stab you
+		in the back. Both are enemies, but one is significantly more dangerous.
+		
+		End of the day, the woke hippie happy go lucky feel goodies with
+		their high minded rhetoric about social justice... think democracy is
+		when you vote for a registered corporation. The US Democratic party, 
+		the most dominant lobby of progressive thought on the internet, is a 
+		registered private corporation. 
+		
+		Corporations were invented in Dusseldorf during the Hansa for the sole 
+		express purpose of trading slaves across continents, they were the 
+		political backbone of Mussolini's campaign to Rome, and now they're 
+		going to start saving the downtrodden apparently.
+		
+		Their system is as backwards as slavery and fascism, and yet we're being 
+		told that progressives represent progress. 
+		
+		Feels a bit like time travelling into postclassical Europe, and hear 
+		about how the Holy Roman church is going to bring an end to war and
+		poverty.
+		
+		Point is, same reason they don't like people depicting mental health 
+		issues. It's another stack of bodies for their big capitalist furance. 
+		They perform sacred gibberish before they throw us on the fire, that way
+		it looks less like murder. 
+		
+		But truth is, unresolved mental health problems is entirely the result
+		of lacking access to resources. We have all kinds of medical technology
+		to save people, but because of corporations, we deem some less worthy
+		than others. Liberalism can't resolve that due to how it contradicts
+		their own corporate nature, and so they employ stalling tactics.
+		
+		Good example of this being banks. When a bank needs a bailout, liberals
+		respond with the servicability of a trained dog. But then look at basic
+		women's rights, like voting, or abortion, or even having a personal bank 
+		account. Suddenly liberalism shuts its doors to the decades of protests,
+		needless suffering and police brutality. As though their massive body
+		of political influence just upped and vanished all of a sudden. 
+		
+		But the historical record of policymaking shows that liberal politicians
+		have plenty of power to generously spare when petitioned by bankers, 
+		the military industrial complex, banana republics and private 
+		corporations. It is only minorities who are relegated to the soapbox and
+		the police dogs. 
+		
+		If they weren't so insufferably condescending, I'd feel bad for how 
+		progressives don't even realise how they're one of the biggest
+		instruments of injustice. How they exist as controlled opposition. 
+		
+		How they are taught to be opinionated loudmouths for the express purpose
+		of drowning out voices who struggle to be heard. They even say so
+		themselves "I will use my privilige to speak for others." 
+		
+		They think replacing a qualified speaker with a clueless idiot is a 
+		winning tactic. They go to their grave thinking they've done people a
+		favour. They have no idea how their lives and intellectual existence is
+		an unfunny joke that made the world worse for humanity as a whole. How
+		they perpetuate every injustice they speak against. How they are a bunch
+		of petit-bourgeous clowns at the petit-bourgeous circus!
+		
+		Point is: Even though I have been personally affected by self harm, and
+		have something to say about it, I feel powerless to do so. Because I know
+		it will be met with self-defeating politically correct discourse about
+		how we should all shut up and die quietly in the spirit of liberal 
+		sacredness. 

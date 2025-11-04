@@ -1,0 +1,37 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=7 format=3 uid="uid://s8537gqjjjmn"]
+
+[sub_resource type="Curve" id="Curve_mh3vh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ajlmd"]
+curve = SubResource("Curve_mh3vh")
+
+[sub_resource type="Curve" id="Curve_1sumc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vtw1p"]
+curve = SubResource("Curve_1sumc")
+
+[sub_resource type="Curve" id="Curve_k8ndb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.35265702, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_616eo"]
+curve = SubResource("Curve_k8ndb")
+
+[resource]
+emission_shape = 2
+emission_sphere_radius = 0.05
+angle_min = 1.0728835e-05
+angle_max = 35.50001
+inherit_velocity_ratio = 0.125
+initial_velocity_min = 2.25
+initial_velocity_max = 11.55
+scale_curve = SubResource("CurveTexture_616eo")
+alpha_curve = SubResource("CurveTexture_ajlmd")
+emission_curve = SubResource("CurveTexture_vtw1p")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 1.0

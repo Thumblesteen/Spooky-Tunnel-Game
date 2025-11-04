@@ -1,0 +1,41 @@
+Metrics that we need to keep track of.
+
+(*1) ## ECU Should read all metrics from all other systems and allow for control
+of any tunable aspects within the systems.                                   
+
+- ECU (*1)
+	- ECU Durability
+	- ECU Quality
+
+- Fuel System
+	- Fuel Level
+	- Fuel Consumption
+	- Fuel Quality
+	- Fuel Injector Quality
+	- Fuel Injector Durability
+
+- Cooling System
+	- Coolant Level
+	- Coolant Consumption
+	- Coolant Quality
+
+- Oiling System
+	- Oil Level
+	- Oil Consumption
+	- Oil Quality
+	- Oil Filter Quality
+	- Oil Filter Durability
+
+- Ignition System
+	- Spark Plug Quality 
+	- Spark Plug Durability
+	- Plug Wire Quality
+	- Plug Wire Durability
+	- Battery Quality
+	- Battery Charge
+	- Battery Consumption
+
+- Exhaust System
+	- Exhaust Heat
+	- Exhaust Durability
+	- Exhaust Manifold Pressure

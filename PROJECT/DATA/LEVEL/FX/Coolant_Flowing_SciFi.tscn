@@ -1,0 +1,185 @@
+[gd_scene load_steps=24 format=3 uid="uid://bforh81fxu66e"]
+
+[sub_resource type="Curve" id="Curve_8nrxt"]
+_data = [Vector2(0, 0.32584274), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_w7i6e"]
+curve = SubResource("Curve_8nrxt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8qdvh"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+spread = 0.0
+initial_velocity_max = 0.25
+gravity = Vector3(0, -4.13, 0)
+scale_min = 1.75
+scale_max = 3.1499999
+scale_curve = SubResource("CurveTexture_w7i6e")
+
+[sub_resource type="Gradient" id="Gradient_xqhy6"]
+offsets = PackedFloat32Array(0.4972973, 0.6972973, 1)
+colors = PackedColorArray(0.49803922, 1, 0.49803922, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_oamsd"]
+frequency = 0.0178
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jd6t8"]
+noise = SubResource("FastNoiseLite_oamsd")
+color_ramp = SubResource("Gradient_xqhy6")
+as_normal_map = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12dbx"]
+cull_mode = 2
+depth_draw_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 1.3012016, 1.1371615, 0.11764706)
+albedo_texture_force_srgb = true
+metallic = 1.0
+metallic_specular = 1.0
+normal_texture = SubResource("NoiseTexture2D_jd6t8")
+refraction_enabled = true
+refraction_scale = -0.05
+use_particle_trails = true
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_ho6ch"]
+material = SubResource("StandardMaterial3D_12dbx")
+radius = 0.02
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="Curve" id="Curve_bu0x6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_037xu"]
+curve = SubResource("Curve_bu0x6")
+
+[sub_resource type="Curve" id="Curve_e0xl0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.32850242, 0.77528095), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_y8k8s"]
+curve = SubResource("Curve_e0xl0")
+
+[sub_resource type="Curve" id="Curve_g7ti6"]
+_limits = [-2.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1.4157304), 0.0, 0.0, 0, 0, Vector2(1, 1.5955056), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_s5la5"]
+curve = SubResource("Curve_g7ti6")
+
+[sub_resource type="Curve" id="Curve_wphf1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5072464, 0.516854), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_0ou6m"]
+curve = SubResource("Curve_wphf1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_spjec"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+emission_shape = 2
+emission_sphere_radius = 0.01
+angle_min = -29.49999
+angle_max = 35.00001
+inherit_velocity_ratio = 0.14
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 0.35
+initial_velocity_max = 0.35
+orbit_velocity_curve = SubResource("CurveTexture_s5la5")
+gravity = Vector3(0, -0.43, 0)
+radial_accel_min = -2.800002
+radial_accel_max = 1.3499978
+damping_max = 3.5800002
+damping_curve = SubResource("CurveTexture_y8k8s")
+scale_min = 0.25
+scale_max = 0.9
+scale_curve = SubResource("CurveTexture_0ou6m")
+color = Color(1, 1, 1, 0.09803922)
+alpha_curve = SubResource("CurveTexture_037xu")
+
+[sub_resource type="Curve" id="Curve_lnjyi"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.46025103, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_bhcr0"]
+offsets = PackedFloat32Array(0.4972973, 0.6972973, 1)
+colors = PackedColorArray(0.49803922, 1, 0.49803922, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hl0du"]
+frequency = 0.0178
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3woh2"]
+noise = SubResource("FastNoiseLite_hl0du")
+color_ramp = SubResource("Gradient_bhcr0")
+as_normal_map = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mklmd"]
+transparency = 1
+blend_mode = 1
+depth_draw_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6666667, 0.8862745, 0.99607843, 0.019607844)
+albedo_texture_force_srgb = true
+metallic = 1.0
+metallic_specular = 0.0
+roughness = 0.45
+normal_texture = SubResource("NoiseTexture2D_3woh2")
+use_particle_trails = true
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_if0by"]
+material = SubResource("StandardMaterial3D_mklmd")
+radius = 0.05
+cap_top = false
+cap_bottom = false
+curve = SubResource("Curve_lnjyi")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+layers = 5
+amount = 28
+lifetime = 1.06
+visibility_aabb = AABB(-50, -50, -50, 100, 100, 100)
+transform_align = 2
+trail_enabled = true
+trail_lifetime = 0.7
+process_material = SubResource("ParticleProcessMaterial_8qdvh")
+draw_pass_1 = SubResource("TubeTrailMesh_ho6ch")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+layers = 5
+amount = 23
+lifetime = 1.25
+explosiveness = 0.2
+visibility_aabb = AABB(-50, -50, -50, 100, 100, 100)
+transform_align = 2
+trail_enabled = true
+trail_lifetime = 0.32
+process_material = SubResource("ParticleProcessMaterial_spjec")
+draw_pass_1 = SubResource("TubeTrailMesh_if0by")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20736712, -0.01434356, -0.029989421)
+layers = 5
+light_color = Color(2.117753e-06, 0.95648605, 0.94770795, 1)
+light_energy = 5.557
+light_volumetric_fog_energy = 2.18
+light_specular = 2.64
+light_cull_mask = 4293918724
+shadow_enabled = true
+omni_range = 0.4
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14818439, -0.6440235, -0.029989421)
+layers = 5
+light_color = Color(2.117753e-06, 0.95648605, 0.94770795, 1)
+light_energy = 5.557
+light_volumetric_fog_energy = 2.18
+light_specular = 2.64
+light_cull_mask = 4293918724
+shadow_enabled = true
+omni_range = 0.4

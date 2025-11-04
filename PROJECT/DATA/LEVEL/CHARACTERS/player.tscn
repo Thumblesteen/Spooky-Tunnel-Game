@@ -1,0 +1,649 @@
+[gd_scene load_steps=31 format=3 uid="uid://x4c8qo4gfhu"]
+
+[ext_resource type="Script" uid="uid://y7ecw7nf5yll" path="res://DATA/LEVEL/CHARACTERS/CONTROLLER.gd" id="1_x1d7p"]
+[ext_resource type="Script" uid="uid://bwl3n3uf5me7q" path="res://DATA/LEVEL/CHARACTERS/camera_3d.gd" id="2_l7sjn"]
+[ext_resource type="PackedScene" uid="uid://ccx4f1r6enuqe" path="res://DATA/LEVEL/ITEM/TOOLS/wpn_sledge_equip.tscn" id="3_3nl4n"]
+[ext_resource type="Script" uid="uid://ceuq1dr5mrbin" path="res://DATA/LEVEL/CHARACTERS/forward.gd" id="3_ojor5"]
+[ext_resource type="PackedScene" uid="uid://bw4eopgwpatky" path="res://SYSTEM/string_process_test.tscn" id="4_l7sjn"]
+[ext_resource type="Shader" uid="uid://cf244lrxibbl3" path="res://DATA/LEVEL/FX/ScreenShade/LightShader.gdshader" id="4_v5c84"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xdk67"]
+radius = 0.25
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_l7sjn"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 20.0
+dof_blur_far_transition = -1.0
+dof_blur_amount = 0.05
+
+[sub_resource type="Animation" id="Animation_sannl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("INSTRUCTION:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:outline_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.1882353)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("INSTRUCTION:outline_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l2auk"]
+resource_name = "UI.Show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("INSTRUCTION:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:outline_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.1882353), Color(1, 1, 1, 0.1882353)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("INSTRUCTION:outline_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.28235295)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yebpa"]
+_data = {
+&"RESET": SubResource("Animation_sannl"),
+&"UI.Show": SubResource("Animation_l2auk")
+}
+
+[sub_resource type="Gradient" id="Gradient_3nl4n"]
+colors = PackedColorArray(0.6790145, 2.8637796e-06, 2.8878452e-07, 1, 0, 0.44705883, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dv05o"]
+gradient = SubResource("Gradient_3nl4n")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_h6q5l"]
+colors = PackedColorArray(0.39748234, 5.5350364e-07, 1.6845763e-07, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_salbo"]
+gradient = SubResource("Gradient_h6q5l")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5c84"]
+shader = ExtResource("4_v5c84")
+shader_parameter/FlareMult = SubResource("GradientTexture2D_dv05o")
+shader_parameter/FlareMult2 = SubResource("GradientTexture2D_salbo")
+shader_parameter/Blur = -0.76
+shader_parameter/FlareThreshold = 0.015
+shader_parameter/Thresholdsmoothness = 0.15
+shader_parameter/Flares = 10
+shader_parameter/FlareSpacing = 0.025
+shader_parameter/FlareDistance = 2.305
+shader_parameter/LensThickness = 1.0
+shader_parameter/Intensity = 0.02
+shader_parameter/Saturation_ = 5.0
+shader_parameter/visibility = 6.5
+shader_parameter/MinFlareIntensity = 0.04
+shader_parameter/MaxFlareIntensity = 1.04
+shader_parameter/RainbowIntensity = 2.3
+
+[sub_resource type="Animation" id="Animation_l7sjn"]
+resource_name = "FST_L"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.015, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.23333333, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.012217305), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..:speed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.165, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [5.0, 3.5, 5.0]
+}
+
+[sub_resource type="Animation" id="Animation_xdk67"]
+resource_name = "FST"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.015, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.23333333, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.013962634), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..:speed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.165, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [5.0, 3.5, 5.0]
+}
+
+[sub_resource type="Animation" id="Animation_x1d7p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..:speed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqq0a"]
+_data = {
+&"FST_L": SubResource("Animation_l7sjn"),
+&"FST_R": SubResource("Animation_xdk67"),
+&"RESET": SubResource("Animation_x1d7p")
+}
+
+[sub_resource type="Animation" id="Animation_v5c84"]
+resource_name = "BUMP_01"
+length = 0.5333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.056210324, 0.13333334, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.08726646), Vector3(0, 0, 0.10471976), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.056210324, 0.13333334, 0.5333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.01, 0.065), Vector3(0, -0.01, 0.065), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3nl4n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dv05o"]
+_data = {
+&"BUMP_01": SubResource("Animation_v5c84"),
+&"RESET": SubResource("Animation_3nl4n")
+}
+
+[sub_resource type="Animation" id="Animation_yqq0a"]
+resource_name = "CROUCH"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../COLLISION_ROOT:shape:height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0, 0.9838867]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../COLLISION_ROOT:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 1.5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ojor5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../COLLISION_ROOT:shape:height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../COLLISION_ROOT:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l7sjn"]
+_data = {
+&"CROUCH": SubResource("Animation_yqq0a"),
+&"RESET": SubResource("Animation_ojor5")
+}
+
+[sub_resource type="Animation" id="Animation_salbo"]
+resource_name = "IDLE_FATIGUED"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1666666, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.022689281, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dv05o"]
+resource_name = "IDLE_NORMAL"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.23, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.03, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0052359877, 0, 0), Vector3(-0.0052359877, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h6q5l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h6q5l"]
+_data = {
+&"IDLE_FATIGUED": SubResource("Animation_salbo"),
+&"IDLE_NORMAL": SubResource("Animation_dv05o"),
+&"RESET": SubResource("Animation_h6q5l")
+}
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("CONT_WALK", "CONT_FALL", "CONT_JUMP", "CONT_INCIDENTAL", "CONT_BUMP", "CONT_CROUCH", "CONT_IDLE", "cPlayerCamera", "InteractionNose", "InteractPrompt", "StepTimer")]
+collision_layer = 5
+floor_snap_length = 0.35
+script = ExtResource("1_x1d7p")
+CONT_WALK = NodePath("CONTROL/ANIMATION/WALK")
+CONT_FALL = NodePath("CONTROL/ANIMATION/FALL")
+CONT_JUMP = NodePath("CONTROL/ANIMATION/JUMP")
+CONT_INCIDENTAL = NodePath("CONTROL/ANIMATION/INCIDENTAL")
+CONT_BUMP = NodePath("CONTROL/ANIMATION/BUMP")
+CONT_CROUCH = NodePath("CONTROL/ANIMATION/CROUCH")
+CONT_IDLE = NodePath("CONTROL/ANIMATION/IDLE")
+cPlayerCamera = NodePath("NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D")
+InteractionNose = NodePath("NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D/INTERACTION/InteractionNose")
+InteractPrompt = NodePath("NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D/INTERACTION/InteractPrompt/Label3D")
+StepTimer = NodePath("CONTROL/StepTimer")
+
+[node name="COLLISION_ROOT" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_xdk67")
+
+[node name="NODE_CAMERA" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6533678, 0)
+
+[node name="NODE_DAMAGE" type="Node3D" parent="NODE_CAMERA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.165, 0)
+
+[node name="NODE_FALL" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE"]
+
+[node name="NODE_RECOIL" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL"]
+
+[node name="NODE_INTERACT" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL"]
+
+[node name="NODE_PIVOT" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT"]
+
+[node name="NODE_LIMP" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT"]
+
+[node name="NODE_INJURY" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP"]
+
+[node name="NODE_FST" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY"]
+
+[node name="NODE_IDLE" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST"]
+
+[node name="NODE_KNOCK" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE"]
+
+[node name="NODE_FX" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK"]
+
+[node name="NODE_REACH" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX"]
+
+[node name="NODE_BUMP" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH"]
+
+[node name="Camera3D" type="Camera3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP"]
+attributes = SubResource("CameraAttributesPractical_l7sjn")
+script = ExtResource("2_l7sjn")
+
+[node name="CAMERA_ATTACH" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D"]
+
+[node name="WPN_CompressionCharge" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D/CAMERA_ATTACH" instance=ExtResource("3_3nl4n")]
+
+[node name="INTERACTION" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D"]
+
+[node name="InteractionNose" type="RayCast3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D/INTERACTION"]
+target_position = Vector3(0, 0, -1)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="FORWARD" type="Marker3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D/INTERACTION"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.86266345)
+script = ExtResource("3_ojor5")
+
+[node name="InteractPrompt" type="Node3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D/INTERACTION"]
+
+[node name="Label3D" type="Label3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D/INTERACTION/InteractPrompt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.07081593)
+pixel_size = 0.0002
+no_depth_test = true
+alpha_scissor_threshold = 0.236
+alpha_hash_scale = 2.0
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0.1882353)
+text = "+"
+font_size = 26
+outline_size = 2
+
+[node name="INSTRUCTION" type="Label3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D/INTERACTION/InteractPrompt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, -0.043, -0.071)
+pixel_size = 0.0001
+no_depth_test = true
+alpha_scissor_threshold = 0.236
+alpha_hash_scale = 2.0
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 0)
+font_size = 29
+outline_size = 4
+
+[node name="CONT_Interaction" type="AnimationPlayer" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D/INTERACTION/InteractPrompt"]
+libraries = {
+&"": SubResource("AnimationLibrary_yebpa")
+}
+
+[node name="Bumper" type="RayCast3D" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D/INTERACTION"]
+target_position = Vector3(0, 0, -0.37)
+hit_back_faces = false
+
+[node name="Screenspace" type="CanvasLayer" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D"]
+follow_viewport_enabled = true
+
+[node name="LightProcess" type="ColorRect" parent="NODE_CAMERA/NODE_DAMAGE/NODE_FALL/NODE_RECOIL/NODE_INTERACT/NODE_PIVOT/NODE_LIMP/NODE_INJURY/NODE_FST/NODE_IDLE/NODE_KNOCK/NODE_FX/NODE_REACH/NODE_BUMP/Camera3D/Screenspace"]
+material = SubResource("ShaderMaterial_v5c84")
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_right = 9.839966
+offset_bottom = 2.0
+color = Color(1, 1, 1, 0.14509805)
+
+[node name="CONTROL" type="Node3D" parent="."]
+
+[node name="ANIMATION" type="Node3D" parent="CONTROL"]
+
+[node name="WALK" type="AnimationPlayer" parent="CONTROL/ANIMATION"]
+libraries = {
+&"": SubResource("AnimationLibrary_yqq0a")
+}
+
+[node name="JUMP" type="AnimationPlayer" parent="CONTROL/ANIMATION"]
+
+[node name="FALL" type="AnimationPlayer" parent="CONTROL/ANIMATION"]
+
+[node name="INCIDENTAL" type="AnimationPlayer" parent="CONTROL/ANIMATION"]
+
+[node name="BUMP" type="AnimationPlayer" parent="CONTROL/ANIMATION"]
+libraries = {
+&"": SubResource("AnimationLibrary_dv05o")
+}
+
+[node name="CROUCH" type="AnimationPlayer" parent="CONTROL/ANIMATION"]
+libraries = {
+&"": SubResource("AnimationLibrary_l7sjn")
+}
+
+[node name="IDLE" type="AnimationPlayer" parent="CONTROL/ANIMATION"]
+libraries = {
+&"": SubResource("AnimationLibrary_h6q5l")
+}
+
+[node name="INJURY" type="AnimationPlayer" parent="CONTROL/ANIMATION"]
+
+[node name="StepTimer" type="Timer" parent="CONTROL"]
+autostart = true
+
+[node name="StaminaTimer" type="Timer" parent="CONTROL"]
+wait_time = 0.5
+autostart = true
+
+[node name="HUD" parent="CONTROL" instance=ExtResource("4_l7sjn")]
+offset_top = -6.0
+offset_bottom = -6.0
+mouse_filter = 1
+
+[node name="CrouchChecker" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 1.0278038, 0)
+target_position = Vector3(0, -2, 0)
+
+[connection signal="timeout" from="CONTROL/StepTimer" to="." method="_on_step_timer_timeout"]
+[connection signal="timeout" from="CONTROL/StaminaTimer" to="." method="_on_stamina_timer_timeout"]

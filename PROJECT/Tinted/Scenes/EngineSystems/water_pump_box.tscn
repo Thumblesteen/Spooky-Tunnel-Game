@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://b70dw4teyvyo8"]
+
+[ext_resource type="Script" uid="uid://rx2067qq2jh" path="res://Tinted/Scripts/Engine/water_pump_box.gd" id="1_35vyk"]
+[ext_resource type="Script" uid="uid://cwsswgbkgroyo" path="res://DATA/LEVEL/OBJECT/activator.gd" id="2_s2os6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3py0c"]
+size = Vector3(0.56518555, 0.9682007, 0.98706055)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djail"]
+albedo_color = Color(0.2284644, 0.22576326, 0.22846454, 1)
+
+[sub_resource type="Animation" id="Animation_qmecu"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_hegoe"]
+resource_name = "waterPumpLid_function"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lid_function/BoxLid:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2, 2.25, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.6675906, -3.2088661, 2.647788), Vector3(-1.6675906, -3.0346565, 2.647788), Vector3(-1.8717117, -3.034668, 2.647788), Vector3(-1.9847207, -3.091278, 2.647788), Vector3(-1.9847207, -3.4641, 2.647788), Vector3(-1.9847207, -3.4987335, 2.647788), Vector3(-1.9847207, -3.5046234, 2.647788)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lid_function/BoxLid:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 1.5, 2, 2.25, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.5440715), Vector3(0, 0, 1.0029883), Vector3(-0.063320555, -1.1662768e-10, 1.5516326), Vector3(-0.063320555, -2.3325536e-10, 1.5516326), Vector3(0.03167773, -4.7438714e-10, 1.5516326), Vector3(0.001518438, -3.467592e-10, 1.5516326)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ucvt"]
+_data = {
+&"RESET": SubResource("Animation_qmecu"),
+&"waterPumpLid_function": SubResource("Animation_hegoe")
+}
+
+[node name="WaterPumpBox" type="Node3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_35vyk")
+
+[node name="lid_function" type="StaticBody3D" parent="."]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 3
+script = ExtResource("2_s2os6")
+
+[node name="BoxLid" type="CSGBox3D" parent="lid_function"]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999964, -1.6675906, -3.2088661, 2.647788)
+size = Vector3(0.58380127, 0.03918457, 1.019165)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="lid_function/BoxLid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21717691, 0.0069732666, 0)
+operation = 2
+radius = 0.024902344
+height = 0.041046143
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lid_function"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6670603, -3.4513056, 2.6500149)
+shape = SubResource("BoxShape3D_3py0c")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+collision_layer = 3
+
+[node name="WaterPumpBox" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6704898, -3.502472, 2.6489477)
+size = Vector3(0.5678711, 0.56469727, 1)
+
+[node name="WaterPumpBox2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.9999958, 0, 0, 0, 0.9999958, 0, 0, 0, 1, -1.6649356, -3.4789238, 2.649375)
+operation = 2
+size = Vector3(0.48986816, 0.5209961, 0.9022217)
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.9999753, 0, 0, 0, -4.3709914e-08, 0.9999753, 0, -1, -4.371139e-08, -1.6604867, -3.4211273, 2.6581278)
+radius = 0.18017578
+height = 0.81375885
+sides = 12
+material = SubResource("StandardMaterial3D_djail")
+
+[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.99996704, 0, 0, 0, -4.370942e-08, 0.99996704, 0, -1, -4.371139e-08, -1.6604867, -3.4211273, 2.6437588)
+radius = 0.19628906
+height = 0.6167698
+sides = 12
+material = SubResource("StandardMaterial3D_djail")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CSGCombiner3D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_8ucvt")
+}

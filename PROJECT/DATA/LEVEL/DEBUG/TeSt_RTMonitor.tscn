@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://1goolpr7wdhd"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dulfv"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg0xa"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_dulfv")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jy0yp"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_dg0xa")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(712, 397)
+
+[node name="Camera2D" type="Camera2D" parent="SubViewport"]
+
+[node name="Node2D" type="Node2D" parent="SubViewport"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SubViewport/Node2D"]
+offset_left = 84.0
+offset_top = 95.0
+offset_right = 1916.0
+offset_bottom = 1081.0
+theme_override_font_sizes/normal_font_size = 161
+text = "THIS IS AN RT CAM TEXTURE"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 1, 0, 4.371139e-08, 1.9106855e-15, -1, -1, -4.371139e-08, -4.371139e-08, -1, 1, 0)
+mesh = SubResource("PlaneMesh_jy0yp")

@@ -1,0 +1,58 @@
+[gd_resource type="StandardMaterial3D" load_steps=9 format=3 uid="uid://cqnkdlhuuuwoj"]
+
+[ext_resource type="Texture2D" uid="uid://clb2iqaytba0v" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_04_diff_1k.jpg" id="1_10ecu"]
+[ext_resource type="Texture2D" uid="uid://b2ex7wukvuc60" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_04_arm_1k.jpg" id="2_2lwi7"]
+
+[sub_resource type="Gradient" id="Gradient_guc7a"]
+offsets = PackedFloat32Array(0, 0.0076923077, 0.20769231, 0.77692306, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0.5077563, 0.73170143, 1, 1, 0, 0, 0, 0.72, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7fhyd"]
+noise_type = 4
+frequency = 0.0056
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bldxx"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_7fhyd")
+color_ramp = SubResource("Gradient_guc7a")
+
+[sub_resource type="Gradient" id="Gradient_j0q78"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_guc7a"]
+frequency = 0.0001
+fractal_type = 3
+fractal_lacunarity = 5.695
+fractal_gain = 0.825
+domain_warp_enabled = true
+domain_warp_type = 2
+domain_warp_amplitude = -15.115
+domain_warp_frequency = 0.295
+domain_warp_fractal_type = 2
+domain_warp_fractal_octaves = 10
+domain_warp_fractal_lacunarity = 1.535
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7fhyd"]
+width = 307
+height = 462
+noise = SubResource("FastNoiseLite_guc7a")
+color_ramp = SubResource("Gradient_j0q78")
+
+[resource]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.06666667, 0.34509805, 0.5803922, 0)
+metallic = 0.2
+metallic_specular = 1.0
+roughness = 0.65
+roughness_texture = SubResource("NoiseTexture2D_7fhyd")
+roughness_texture_channel = 1
+emission = Color(0.55566335, 0.8014585, 0.9951443, 1)
+emission_energy_multiplier = 0.02
+emission_texture = ExtResource("1_10ecu")
+normal_enabled = true
+normal_scale = 0.75
+normal_texture = ExtResource("2_2lwi7")
+refraction_enabled = true
+refraction_scale = 0.1
+refraction_texture = SubResource("NoiseTexture2D_bldxx")

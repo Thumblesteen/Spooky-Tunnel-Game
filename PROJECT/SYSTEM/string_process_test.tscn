@@ -1,0 +1,138 @@
+[gd_scene load_steps=10 format=3 uid="uid://bw4eopgwpatky"]
+
+[ext_resource type="Script" uid="uid://dekowetgsgyyq" path="res://SYSTEM/string_process_test.gd" id="1_s3tt0"]
+
+[sub_resource type="Animation" id="Animation_s3tt0"]
+resource_name = "Display"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HP:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_orltc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HP:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qh05u"]
+_data = {
+&"Display": SubResource("Animation_s3tt0"),
+&"RESET": SubResource("Animation_orltc")
+}
+
+[sub_resource type="Animation" id="Animation_qh05u"]
+resource_name = "Display"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4mybe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2k8yd"]
+_data = {
+&"Display": SubResource("Animation_qh05u"),
+&"RESET": SubResource("Animation_4mybe")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3tt0"]
+bg_color = Color(1.179, 1.179, 1.179, 0.69)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orltc"]
+bg_color = Color(0, 0, 0, 0.5882353)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s3tt0")
+
+[node name="HP" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30400002
+anchor_top = 0.063
+anchor_right = 0.82900006
+anchor_bottom = 0.13100001
+offset_left = 66.31995
+offset_top = 929.96
+offset_right = -241.68091
+offset_bottom = 929.52
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(350, 0)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "HEALTH: "
+
+[node name="HPDisplay" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qh05u")
+}
+
+[node name="StaminaDisplay" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Stamina")
+libraries = {
+&"": SubResource("AnimationLibrary_2k8yd")
+}
+speed_scale = 3.0
+
+[node name="Stamina" type="ProgressBar" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.127
+anchor_bottom = 0.025
+offset_left = 10.0
+offset_top = 1040.0
+offset_right = 10.159988
+offset_bottom = 1040.0
+theme_override_styles/background = SubResource("StyleBoxFlat_s3tt0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_orltc")
+value = 100.0
