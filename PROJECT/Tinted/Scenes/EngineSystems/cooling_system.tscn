@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://utwsb4dij1gi"]
 
 [ext_resource type="Script" uid="uid://c2p7vunuxwb3y" path="res://Tinted/Scripts/Engine/EngineSystems/cooling_system.gd" id="1_1n8es"]
-[ext_resource type="Script" uid="uid://rx2067qq2jh" path="res://Tinted/Scripts/Engine/water_pump_box.gd" id="3_36t4x"]
+[ext_resource type="Script" uid="uid://rx2067qq2jh" path="res://Tinted/Scripts/Engine/EngineComponents/water_pump_box.gd" id="3_36t4x"]
 [ext_resource type="Script" uid="uid://cwsswgbkgroyo" path="res://DATA/LEVEL/OBJECT/activator.gd" id="4_x657o"]
 [ext_resource type="PackedScene" uid="uid://7ek56x5dbu5q" path="res://Tinted/Scenes/CustomPipes/pipe_quarter.tscn" id="5_hjuax"]
 [ext_resource type="PackedScene" uid="uid://bgrtyfgv645v4" path="res://Tinted/Scenes/EngineSystems/valve_function.tscn" id="6_mieoq"]

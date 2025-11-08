@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://de8hpwh7067hs"]
+
+[ext_resource type="Material" uid="uid://cqnkdlhuuuwoj" path="res://DATA/Shaders/Surfaces/Glass_Window_Weathered.tres" id="1_mcw0h"]
+[ext_resource type="Texture2D" uid="uid://clb2iqaytba0v" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_04_diff_1k.jpg" id="2_hwmsi"]
+[ext_resource type="Texture2D" uid="uid://dc2xpnputh7cb" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_04_ao_1k.jpg" id="3_f2s0u"]
+[ext_resource type="Texture2D" uid="uid://b2ex7wukvuc60" path="res://ASSETS/TEXTURE/SURFACE/MEATAL/rusty_metal_04_arm_1k.jpg" id="4_7wam3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idnc3"]
+albedo_texture = ExtResource("2_hwmsi")
+metallic = 0.66
+metallic_specular = 0.68
+metallic_texture = ExtResource("3_f2s0u")
+metallic_texture_channel = 4
+roughness = 0.3
+normal_enabled = true
+normal_scale = -0.8
+normal_texture = ExtResource("4_7wam3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3yml"]
+next_pass = SubResource("StandardMaterial3D_idnc3")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D"]
+
+[node name="FrontWindow" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 3.2159733e-08, -8.6613e-08, 1.792796e-08, 0.9999697, 5.029142e-07, 1.2200326e-07, -3.4831464e-07, 0.9999765, -0.18119274, 6.6370544, 25.879044)
+size = Vector3(9.989136, 9.239502, 0.9208679)
+material = ExtResource("1_mcw0h")
+
+[node name="HULL" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 5.005859e-09, -1.1175871e-08, 1.03900675e-08, 0.99999535, 5.9604645e-08, 7.264316e-08, -4.4703484e-08, 0.99999535, 0, 9, 0)
+use_collision = true
+size = Vector3(15, 15, 35)
+material = SubResource("StandardMaterial3D_y3yml")
+
+[node name="HULL4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 3.736932e-08, -8.6613e-08, 1.792796e-08, 0.9999665, 6.03497e-07, 1.2200326e-07, -3.9301813e-07, 0.9999765, -0.4355458, 7.3483315, 21.25539)
+use_collision = true
+size = Vector3(10.448364, 11.754517, 8.0701065)
+material = SubResource("StandardMaterial3D_y3yml")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.9998808, -0.009135468, -0.001966463, 0.0019660445, 2.6583672e-05, 0.9999243, -0.009135088, -0.999933, 4.287371e-05, 0.060304716, 6.636059, 20.060871)
+operation = 2
+radius = 4.604492
+height = 10.544117
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 3.6816346e-08, -8.6613e-08, 1.792796e-08, 0.99996704, 5.867332e-07, 1.2200326e-07, -3.874302e-07, 0.9999765, -0.25091946, 3.784008, 20.067272)
+operation = 2
+size = Vector3(8.435059, 3.152832, 9.525707)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://eg7x50ue6plm"]
 
-[ext_resource type="Script" uid="uid://d2a7egkb1f7la" path="res://Tinted/Scripts/Engine/intake_box.gd" id="1_eydtx"]
+[ext_resource type="Script" uid="uid://d2a7egkb1f7la" path="res://Tinted/Scripts/Engine/EngineComponents/intake_box.gd" id="1_eydtx"]
 [ext_resource type="Script" uid="uid://cwsswgbkgroyo" path="res://DATA/LEVEL/OBJECT/activator.gd" id="2_20qkc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkx2o"]

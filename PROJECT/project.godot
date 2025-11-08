@@ -12,13 +12,12 @@ config_version=5
 
 config/name="DEADWORKS"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
 PlayerHome="*res://SYSTEM/player_home.gd"
 PlayerData="*res://SYSTEM/player_data.gd"
-World="*res://world.gd"
+World="*res://SYSTEM/world.gd"
 UTIL="*res://SYSTEM/util.gd"
 
 [display]
@@ -32,7 +31,11 @@ window/per_pixel_transparency/allowed=true
 
 folder_colors={
 "res://ASSETS/": "red",
-"res://DATA/": "purple"
+"res://DATA/": "purple",
+"res://Tinted/": "red",
+"res://Tinted/Assets/": "green",
+"res://Tinted/Docs/": "pink",
+"res://Tinted/Scenes/": "purple"
 }
 
 [input]

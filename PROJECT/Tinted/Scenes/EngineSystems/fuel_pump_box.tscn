@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dop7cwnduc7nr"]
 
-[ext_resource type="Script" uid="uid://rx2067qq2jh" path="res://Tinted/Scripts/Engine/water_pump_box.gd" id="1_wjfp1"]
+[ext_resource type="Script" uid="uid://rx2067qq2jh" path="res://Tinted/Scripts/Engine/EngineComponents/water_pump_box.gd" id="1_wjfp1"]
 [ext_resource type="Script" uid="uid://cwsswgbkgroyo" path="res://DATA/LEVEL/OBJECT/activator.gd" id="2_xdck5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3py0c"]

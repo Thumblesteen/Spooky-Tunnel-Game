@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://cvnn45oxnfn28"]
 
-[ext_resource type="Script" uid="uid://bvvsfkxjihqjx" path="res://Tinted/Scripts/Engine/oil_filter_function.gd" id="1_n7e7j"]
+[ext_resource type="Script" uid="uid://bvvsfkxjihqjx" path="res://Tinted/Scripts/Engine/EngineComponents/oil_filter_function.gd" id="1_n7e7j"]
 [ext_resource type="Script" uid="uid://cwsswgbkgroyo" path="res://DATA/LEVEL/OBJECT/activator.gd" id="2_mtx54"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwtef"]
